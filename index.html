@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1440">
+<title>ЛАТА ТРЭК — горнолыжный комплекс в Крылатском</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="css/main.css">
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  var rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var d = document.documentElement;
+  if (q.has('static') || rm) { d.classList.add('static'); return; }
+  if (sessionStorage.getItem('lata-wipe')) { d.classList.add('from-wipe', 'entering'); }
+  else { d.classList.add('preloading'); }
+})();
+</script>
+</head>
+<body class="page-home home">
+
+<div class="canvas">
+
+  <!-- диагональные полосы-декор -->
+  <div class="stripe home-stripe-1"><img src="assets/img/stripe-a.svg" alt=""></div>
+  <div class="stripe home-stripe-2"><img src="assets/img/stripe-b.svg" alt=""></div>
+
+  <!-- HERO -->
+  <div class="hero-strip">
+    <div class="media"><img src="assets/img/hero-src.jpg" alt="Горнолыжный склон «Лата Трэк»"></div>
+    <div class="grad"></div>
+  </div>
+  <div class="hero-badge">
+    <div class="paint-img"><img src="assets/img/paint-badge.svg" alt=""></div>
+    <div class="t">ГОРНОЛЫЖНЫЙ КОМПЛЕКС</div>
+  </div>
+  <div class="paint hero-paint-h1"><img src="assets/img/paint-h1.svg" alt=""></div>
+  <h1 class="h1-hero">
+    <span class="mask"><span>ГОРОД</span></span>
+    <span class="mask"><span>СКЛОН</span></span>
+    <span class="mask"><span>СНЕГ</span></span>
+  </h1>
+  <div class="hero-btns">
+    <a class="btn btn-dark" href="#">
+      <span class="flame"><img src="assets/img/icon-flame.svg" alt=""></span>
+      ПОПОЛНИТЬ СКИ-ПАСС
+    </a>
+    <a class="btn btn-ghost" href="#">ПОДАРИТЬ СЕРТИФИКАТ</a>
+  </div>
+
+  <!-- ВЕБ-КАМЕРЫ -->
+  <section class="webcams" data-rv>
+    <div class="cap"><img src="assets/img/dot-white.svg" alt=""><span>ВЕБ-КАМЕРЫ</span></div>
+    <div class="hours">РЕЖИМ РАБОТЫ / БУДНИ: 10:00 - 22:00 / ВЫХОДНЫЕ: 09:00 - 23:00</div>
+    <div class="cam c1"><img src="assets/img/cam-1.jpg" alt="Веб-камера 1"></div>
+    <div class="cam c2"><img src="assets/img/cam-2.jpg" alt="Веб-камера 2"></div>
+    <div class="cam c3"><img src="assets/img/cam-3.jpg" alt="Веб-камера 3"></div>
+  </section>
+  <div class="fox-webcams"><img src="assets/img/fox-webcams.svg" alt=""></div>
+
+  <!-- статусы склонов -->
+  <div class="paint status-paint"><img src="assets/img/paint-status.svg" alt=""></div>
+  <div class="status-row">
+    <div class="g"><span class="lite">СКЛОН 1:</span><span class="s"><img src="assets/img/dot-green-a.svg" alt=""><span class="lite">ОТКРЫТ</span></span></div>
+    <div class="g"><span class="lite">СКЛОН 2:</span><span class="s"><img src="assets/img/dot-green-a.svg" alt=""><span class="ok">ОТКРЫТ</span></span></div>
+    <div class="g"><span class="lite">СКЛОН 3:</span><span class="s"><img src="assets/img/dot-green-a.svg" alt=""><span class="ok">ОТКРЫТ</span></span></div>
+    <div class="g"><span class="dark">СКЛОН 4:</span><span class="s"><img src="assets/img/dot-green-b.svg" alt=""><span class="ok">ОТКРЫТ</span></span></div>
+    <div class="g"><span class="dark">СКЛОН 5:</span><span class="s"><img src="assets/img/dot-green-b.svg" alt=""><span class="ok">ОТКРЫТ</span></span></div>
+  </div>
+
+  <!-- О КОМПЛЕКСЕ -->
+  <h2 class="h2 about-h2" data-rv>О КОМПЛЕКСЕ</h2>
+  <div class="about-txt" data-rv>
+    <p>Спортивный комплекс «Лата Трэк» находится в Крылатском.&nbsp;</p>
+    <p>У нас в комплексе 6 горнолыжных склонов для новичков и профессионалов.</p>
+    <p>​</p>
+    <p>4 тюбинговые трассы длиной 200 метров!&nbsp;</p>
+    <p>​</p>
+    <p>Прокат инвентаря и кафе для вашего комфорта,&nbsp;</p>
+    <p>а также услуги инструкторов.</p>
+  </div>
+  <a class="more about-more" href="#" data-rv>ПОДРОБНЕЕ →</a>
+
+  <!-- погодный виджет -->
+  <aside class="weather" data-rv>
+    <div class="top">
+      <img class="wlogo" src="assets/img/logo-dark.png" alt="ЛАТА ТРЭК">
+      <div class="badge"><img src="assets/img/dot-open.svg" alt=""><span>ОТКРЫТ</span></div>
+    </div>
+    <div class="temp">
+      <span class="deg">−12°</span>
+      <span class="cond"><b>СНЕГ</b><i>ощущается −17°</i></span>
+    </div>
+    <div class="metrics">
+      <div class="m"><b>4 м/с</b><span>ВЕТЕР</span></div>
+      <div class="m"><b>82%</b><span>ВЛАЖНОСТЬ</span></div>
+      <div class="m"><b>&lt; 5 мин</b><span>ОЧЕРЕДЬ</span></div>
+    </div>
+    <div class="src">по данным Gismeteo · обновлено 12:40</div>
+  </aside>
+
+  <!-- промо-баннер -->
+  <div class="promo-banner" data-rv><div class="wrap"><img src="assets/img/promo-banner.svg" alt=""></div></div>
+  <div class="promo-title" data-rv>ПРЕДПРОДАЖА СКИ-ПАССОВ СО СКИДКОЙ ДО ОТКРЫТИЯ СЕЗОНА! СКИДКИ ДО 15%</div>
+  <a class="btn btn-dark promo-btn" href="#" data-rv>
+    <span class="flame"><img src="assets/img/icon-flame.svg" alt=""></span>
+    УЗНАТЬ БОЛЬШЕ
+  </a>
+  <div class="paint seasonal-paint"><div class="rot"><img src="assets/img/paint-seasonal.svg" alt=""></div></div>
+  <div class="seasonal-label">СЕЗОННОЕ ПРЕДЛОЖЕНИЕ</div>
+
+  <!-- ОСНОВНЫЕ РАЗВЛЕЧЕНИЯ -->
+  <h2 class="h2 fun-h2" data-rv>ОСНОВНЫЕ РАЗВЛЕЧЕНИЯ</h2>
+  <div data-rv-group>
+    <a class="bcard fun-card p1" href="#" data-rv>
+      <div class="pic"><img src="assets/img/card-slopes.jpg" alt="Горнолыжные склоны"><div class="grad"></div></div>
+      <div class="num">01 /</div>
+      <div class="ttl">ГОРНОЛЫЖНЫЕ СКЛОНЫ</div>
+      <div class="dsc">6 склонов для новичков и профессионалов, прокат инвентаря и инструкторы.</div>
+      <span class="more">ПОДРОБНЕЕ →</span>
+    </a>
+    <a class="bcard fun-card p2" href="tubing.html" data-nav data-rv>
+      <div class="pic"><img src="assets/img/card-tubing.jpg" alt="Тюбинг"></div>
+      <div class="num">02 /</div>
+      <div class="ttl">ТЮБИНГ</div>
+      <div class="dsc">4 трассы длиной 200 метров, современные подъемники, прокат тюбов!</div>
+      <span class="more">ПОДРОБНЕЕ →</span>
+    </a>
+    <a class="bcard fun-card p3" href="#" data-rv>
+      <div class="pic"><img src="assets/img/card-skytech.jpg" alt="Skytech"></div>
+      <div class="num">03 /</div>
+      <div class="ttl">SKYTECH</div>
+      <div class="dsc">Тут будет текст про скай тех.&nbsp;</div>
+      <span class="more">ПОДРОБНЕЕ →</span>
+    </a>
+    <a class="bcard fun-card p4" href="#" data-rv>
+      <div class="pic"><img src="assets/img/card-snowpark.jpg" alt="Сноупарк"></div>
+      <div class="num">04 /</div>
+      <div class="ttl">СНОУПАРК</div>
+      <div class="dsc">Тут будет текст про сноу парк.&nbsp;</div>
+      <span class="more">ПОДРОБНЕЕ →</span>
+    </a>
+  </div>
+
+  <!-- ДОПОЛНИТЕЛЬНЫЕ АКТИВНОСТИ -->
+  <h2 class="h2 act-h2" data-rv>ДОПОЛНИТЕЛЬНЫЕ АКТИВНОСТИ</h2>
+  <div data-rv-group>
+    <a class="bcard act-card a1" href="#" data-rv>
+      <div class="navy"></div>
+      <div class="icon"><img src="assets/img/icon-tennis.svg" alt=""></div>
+      <div class="ttl">ТЕННИС</div>
+      <div class="dsc">Открытые корты</div>
+      <span class="more">ПОДРОБНЕЕ →</span>
+    </a>
+    <a class="bcard act-card a2" href="#" data-rv>
+      <div class="navy"></div>
+      <div class="icon"><img src="assets/img/icon-volleyball.svg" alt=""></div>
+      <div class="ttl">ВОЛЕЙБОЛ</div>
+      <div class="dsc">Площадки для игры</div>
+      <span class="more">ПОДРОБНЕЕ →</span>
+    </a>
+    <a class="bcard act-card a3" href="#" data-rv>
+      <div class="navy"></div>
+      <div class="icon"><img src="assets/img/icon-summer.svg" alt=""></div>
+      <div class="ttl">ЛЕТНИЙ КОМПЛЕКС ДЛЯ ГОРНЫХ ЛЫЖ И СНОУБОРДА</div>
+      <div class="dsc">Тренируйтесь летом!</div>
+      <span class="more">ПОДРОБНЕЕ →</span>
+    </a>
+    <a class="bcard act-card a4" href="#" data-rv>
+      <div class="navy"></div>
+      <div class="icon"><img src="assets/img/icon-holiday.svg" alt=""></div>
+      <div class="ttl">МЕРОПРИЯТИЯ</div>
+      <div class="dsc">Корпоративы и праздники</div>
+      <span class="more">ПОДРОБНЕЕ →</span>
+    </a>
+  </div>
+
+  <!-- FAQ -->
+  <h2 class="h2 faq-h2" data-rv>ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</h2>
+  <div data-rv-group>
+    <div data-rv>
+      <div class="faq-num" style="top:3799px">01</div>
+      <div class="faq-q" style="top:3798.5px">КАК ДОБРАТЬСЯ ДО КОМПЛЕКСА?</div>
+      <div class="faq-a" style="top:3795px">Внимание! Разный адрес: Тюбинг - ул. Крылатская, дом 1. Горнолыжные склоны - ул. Крылатская, владение 1.</div>
+      <div class="faq-rule" style="top:3869.1px"></div>
+    </div>
+    <div data-rv>
+      <div class="faq-num" style="top:3913.65px">02</div>
+      <div class="faq-q" style="top:3913.15px">ЕСТЬ ЛИ ПРОКАТ ОБОРУДОВАНИЯ?</div>
+      <div class="faq-a" style="top:3909.65px">Да, у нас работает прокат лыж, сноубордов, тюбингов и защитного снаряжения.</div>
+      <div class="faq-rule" style="top:3986.21px"></div>
+    </div>
+    <div data-rv>
+      <div class="faq-num" style="top:4028.65px">03</div>
+      <div class="faq-q" style="top:4028.15px">МОЖНО ЛИ ЗАНИМАТЬСЯ С ИНСТРУКТОРОМ?</div>
+      <div class="faq-a" style="top:4024.65px">Да, у нас работают сертифицированные инструкторы по горным лыжам и сноуборду.</div>
+      <div class="faq-rule" style="top:4103.31px"></div>
+    </div>
+    <div data-rv>
+      <div class="faq-num" style="top:4145.41px">04</div>
+      <div class="faq-q" style="top:4144.91px">ЕСТЬ ЛИ ПРОКАТ ОБОРУДОВАНИЯ?</div>
+      <div class="faq-a" style="top:4141.41px">Да, у нас работает прокат лыж, сноубордов, тюбингов и защитного снаряжения.</div>
+      <div class="faq-rule" style="top:4217.96px"></div>
+    </div>
+    <div data-rv>
+      <div class="faq-num" style="top:4260.41px">05</div>
+      <div class="faq-q" style="top:4259.91px">МОЖНО ЛИ ЗАНИМАТЬСЯ С ИНСТРУКТОРОМ?</div>
+      <div class="faq-a" style="top:4256.41px">Да, у нас работают сертифицированные инструкторы по горным лыжам и сноуборду.</div>
+      <div class="faq-rule" style="top:4335.06px"></div>
+    </div>
+  </div>
+
+  <!-- ФУТЕР -->
+  <footer class="site-footer">
+    <img class="flogo" src="assets/img/logo-light.png" alt="ЛАТА ТРЭК">
+    <div class="contacts">
+      <p>Телефон: +7 (495) 780-22-77</p>
+      <p>Email: info@spusk.ru</p>
+      <p>Адрес: Москва, ул. Крылатская, дом 1</p>
+    </div>
+    <div class="col info"><b>ИНФОРМАЦИЯ</b>О комплексе / Правила / Вакансии</div>
+    <div class="col legal"><b>ЮРИДИЧЕСКОЕ</b>Политика конфиденциальности / Оферта (тюбинг) / Оферта (склоны)</div>
+    <div class="copy"><p>© 2026 LATA TRACK.</p><p>ВСЕ ПРАВА ЗАЩИЩЕНЫ.</p></div>
+    <div class="madebox"></div>
+    <div class="madeslab"></div>
+    <div class="www w1"><img src="assets/img/www-1.svg" alt=""></div>
+    <div class="www w2"><img src="assets/img/www-2.svg" alt=""></div>
+    <div class="www w3"><img src="assets/img/www-3.svg" alt=""></div>
+    <div class="made"><p class="csite">Создание сайта</p><p>Павел Кузнецов</p></div>
+    <div class="fox"><img src="assets/img/fox-footer.svg" alt=""></div>
+  </footer>
+
+  <!-- ХЕДЕР -->
+  <header class="site-header">
+    <a class="logo" href="index.html"><img src="assets/img/logo-dark.png" alt="ЛАТА ТРЭК"></a>
+    <nav>
+      <a href="index.html">СКЛОНЫ</a>
+      <a href="tubing.html" data-nav>ТЮБИНГ</a>
+      <a href="#">ОБУЧЕНИЕ</a>
+      <a href="#">МЕРОПРИЯТИЯ</a>
+      <a href="#">ВОЛЕЙБОЛ</a>
+      <a href="#">ТЕННИС</a>
+      <a href="#">КОНТАКТЫ</a>
+    </nav>
+    <span class="phone">+7 (495) 780-22-77</span>
+  </header>
+
+</div>
+
+<!-- ПРЕЛОАДЕР -->
+<div id="preloader" aria-hidden="true">
+  <img class="pre-logo" src="assets/img/logo-dark.png" alt="">
+  <div class="pre-strip">
+    <div class="pre-media">
+      <img src="assets/img/hero-src.jpg" alt="">
+      <div class="pre-grad"></div>
+    </div>
+    <span class="line line-t"></span>
+    <span class="line line-b"></span>
+  </div>
+  <div class="pre-pct">0%</div>
+</div>
+
+<!-- ПЕРЕХОД -->
+<div id="wipe"><span class="edge"></span></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

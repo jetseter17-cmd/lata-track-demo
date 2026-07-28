@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1440">
+<title>ТЮБИНГ — ЛАТА ТРЭК</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="css/main.css">
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  var rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var d = document.documentElement;
+  if (q.has('static') || rm) { d.classList.add('static'); return; }
+  if (sessionStorage.getItem('lata-wipe')) { d.classList.add('from-wipe'); }
+  d.classList.add('entering', 'page-anim-hero');
+})();
+</script>
+</head>
+<body class="page-tubing">
+
+<div class="canvas">
+
+  <!-- диагональные полосы-декор -->
+  <div class="stripe tub-stripe-top"><img src="assets/img/tub-stripe-top.svg" alt=""></div>
+  <div class="stripe tub-stripe-bottom"><img src="assets/img/tub-stripe-bottom.svg" alt=""></div>
+
+  <!-- HERO -->
+  <div class="hero-strip">
+    <div class="media"><img src="assets/img/hero-tubing.jpg" alt="Тюбинг в «Лата Трэк»"></div>
+  </div>
+  <div class="paint tub-paint-h1"><img src="assets/img/tub-paint-h1.svg" alt=""></div>
+  <h1 class="h1-hero"><span class="mask"><span>ТЮБИНГ</span></span></h1>
+  <div class="tub-note tub-hero-soft">Захватывающий спуск на надувных санках для всей семьи</div>
+
+  <!-- промо -->
+  <div class="tub-promo tub-hero-soft"><div class="wrap"><img src="assets/img/tub-promo-banner.svg" alt=""></div></div>
+  <div class="tub-promo-title tub-hero-soft">СКИДКА 30% НА ТЮБИНГ ДО 12:00 В БУДНИЕ ДНИ!</div>
+  <div class="paint seasonal-paint tub-hero-soft"><div class="rot"><img src="assets/img/tub-paint-seasonal.svg" alt=""></div></div>
+  <div class="seasonal-label tub-hero-soft">СЕЗОННОЕ ПРЕДЛОЖЕНИЕ</div>
+
+  <!-- ЦЕНЫ -->
+  <section class="sec sec-prices">
+    <h2 class="h2" data-rv>ЦЕНЫ</h2>
+    <div class="row" data-rv-group>
+      <div class="bcard hoverable price-card" data-rv>
+        <div class="hrow">
+          <span class="mono-label grow">ВРЕМЯ</span>
+          <span class="cell"><span class="mono-label">БУДНИ</span></span>
+          <span class="cell last"><span class="mono-label accent">ВЫХОДНЫЕ</span></span>
+        </div>
+        <div class="rule"></div>
+        <div class="prow zebra">
+          <span class="nm">1 ЧАС</span>
+          <span class="cell">1 000 ₽</span>
+          <span class="cell last">1 800 ₽</span>
+        </div>
+        <div class="prow">
+          <span class="nm">2 ЧАСА</span>
+          <span class="cell">700 ₽</span>
+          <span class="cell last">2 000 ₽</span>
+        </div>
+      </div>
+      <div class="bcard hoverable info-card" data-rv>
+        <span class="mono-label">ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ</span>
+        <div class="bullet"><span class="dot"></span><p>На одном тюбинге — до 120 кг включительно</p></div>
+        <div class="bullet"><span class="dot"></span><p>Рекомендуется катание с 3 лет</p></div>
+        <div class="bullet"><span class="dot"></span><p>Цена включает аренду тюбинга и подъёмника</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПРАВИЛА КАТАНИЯ -->
+  <h2 class="h2 tub-rules-h2" data-rv>ПРАВИЛА КАТАНИЯ</h2>
+  <div class="rules-cols" data-rv-group>
+    <div class="bcard hoverable rule-card allow" data-rv>
+      <span class="cap">РАЗРЕШЕНО</span>
+      <div class="bullet"><span class="dot"></span><p>Катание детей от 3 лет в сопровождении взрослых</p></div>
+      <div class="bullet"><span class="dot"></span><p>Использование тюбингов, предоставленных комплексом</p></div>
+      <div class="bullet"><span class="dot"></span><p>Спуск по специально оборудованным трассам</p></div>
+      <div class="bullet"><span class="dot"></span><p>Следование указаниям персонала</p></div>
+    </div>
+    <div class="bcard hoverable rule-card deny" data-rv>
+      <span class="cap">ЗАПРЕЩЕНО</span>
+      <div class="bullet"><span class="dot"></span><p>Катание в состоянии алкогольного опьянения</p></div>
+      <div class="bullet"><span class="dot"></span><p>Использование собственных тюбингов без разрешения</p></div>
+      <div class="bullet"><span class="dot"></span><p>Спуск стоя или в неправильной позе</p></div>
+      <div class="bullet"><span class="dot"></span><p>Создание препятствий на трассе</p></div>
+    </div>
+  </div>
+  <div class="important-card" data-rv>
+    <span class="cap">ВАЖНО!</span>
+    <p>Перед началом катания обязательно ознакомьтесь с полными правилами безопасности. Администрация не несёт ответственности за несчастные случаи, произошедшие в результате несоблюдения правил.</p>
+  </div>
+  <div class="rules-link" data-rv><a class="more" href="#">ЧИТАТЬ ВСЕ ПРАВИЛА →</a></div>
+
+  <!-- ЗАЛОГ -->
+  <section class="sec sec-deposit">
+    <h2 class="h2" data-rv>ЗАЛОГ</h2>
+    <div class="row" data-rv-group>
+      <div class="bcard hoverable deposit-sum" data-rv>
+        <span class="cap">СУММА ЗАЛОГА</span>
+        <span class="big">3 000 ₽</span>
+        <span class="sub">ЗА 1 ТЮБИНГ</span>
+      </div>
+      <div class="bcard hoverable deposit-info" data-rv>
+        <span class="mono-label">ЧТО ПРИНИМАЕМ</span>
+        <div class="bullet"><span class="dot" style="width:12px;height:12px;margin-top:6px"></span><p>Наличные деньги</p></div>
+        <div class="bullet"><span class="dot" style="width:12px;height:12px;margin-top:6px"></span><p>Водительское удостоверение</p></div>
+        <p class="txt">Залог возвращается полностью при сдаче тюбинга в исправном состоянии.</p>
+        <span class="warn-badge">БАНКОМАТА НА ТЕРРИТОРИИ НЕТ</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- РЕЖИМ РАБОТЫ -->
+  <h2 class="h2 tub-hours-h2" data-rv>РЕЖИМ РАБОТЫ</h2>
+  <div data-rv-group>
+    <div class="hours-card hc1" data-rv>
+      <span class="cap">ПОНЕДЕЛЬНИК – ПЯТНИЦА / БУДНИЕ ДНИ</span>
+      <span class="time">11:00 – 21:00</span>
+    </div>
+    <div class="hours-card hc2" data-rv>
+      <span class="cap">СУББОТА – ВОСКРЕСЕНЬЕ / ВЫХОДНЫЕ И ПРАЗДНИКИ</span>
+      <span class="time">10:00 – 22:00</span>
+    </div>
+  </div>
+  <p class="hours-note" data-rv>Обратите внимание: Тюбинг работает при наличии снежного покрова. При неблагоприятных погодных условиях трасса может быть закрыта. Оповещаем на сайте.</p>
+
+  <!-- ФОТО И ВИДЕО -->
+  <h2 class="h2 tub-photos-h2" data-rv>ФОТО И ВИДЕО</h2>
+  <div data-rv-group>
+    <div class="gal g1" data-rv><img src="assets/img/tub-photo.jpg" alt="Тюбинг — фото 1"></div>
+    <div class="gal g2 flip" data-rv><img src="assets/img/tub-photo.jpg" alt="Тюбинг — фото 2"></div>
+    <div class="gal g3" data-rv><img src="assets/img/tub-photo.jpg" alt="Тюбинг — фото 3"></div>
+    <div class="gal g4 flip" data-rv><img src="assets/img/tub-photo.jpg" alt="Тюбинг — фото 4"></div>
+    <div class="gal g5" data-rv><img src="assets/img/tub-photo.jpg" alt="Тюбинг — фото 5"></div>
+    <div class="gal g6 flip" data-rv><img src="assets/img/tub-photo.jpg" alt="Тюбинг — фото 6"></div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta" data-rv>
+    <div class="fox"><img src="assets/img/fox-cta.svg" alt=""></div>
+    <div class="left">
+      <span class="cap">МЫ НА СВЯЗИ</span>
+      <h3>Остались вопросы?</h3>
+      <p class="txt">Подскажем по склонам, прокату, ски-пассам и расписанию. Отвечает команда комплекса — без ботов, скриптов и навязчивых звонков.</p>
+      <p class="sub">Работаем ежедневно с 07:00 до 00:00</p>
+    </div>
+    <div class="card">
+      <span class="cap">ПОЗВОНИТЕ ИЛИ НАПИШИТЕ</span>
+      <span class="phone">+7 (495) 780-22-77</span>
+      <div class="btns">
+        <a class="btn solid" href="tel:+74957802277">ПОЗВОНИТЬ</a>
+        <a class="btn line" href="#">НАПИСАТЬ В МАКС</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ФУТЕР -->
+  <footer class="site-footer">
+    <img class="flogo" src="assets/img/logo-light.png" alt="ЛАТА ТРЭК">
+    <div class="contacts">
+      <p>Телефон: +7 (495) 780-22-77</p>
+      <p>Email: info@spusk.ru</p>
+      <p>Адрес: Москва, ул. Крылатская, дом 1</p>
+    </div>
+    <div class="col info"><b>ИНФОРМАЦИЯ</b>О комплексе / Правила / Вакансии</div>
+    <div class="col legal"><b>ЮРИДИЧЕСКОЕ</b>Политика конфиденциальности / Оферта (тюбинг) / Оферта (склоны)</div>
+    <div class="copy"><p>© 2026 LATA TRACK.</p><p>ВСЕ ПРАВА ЗАЩИЩЕНЫ.</p></div>
+    <div class="madebox"></div>
+    <div class="madeslab"></div>
+    <div class="www w1"><img src="assets/img/www-1.svg" alt=""></div>
+    <div class="www w2"><img src="assets/img/www-2.svg" alt=""></div>
+    <div class="www w3"><img src="assets/img/www-3.svg" alt=""></div>
+    <div class="made"><p class="csite">Создание сайта</p><p>Павел Кузнецов</p></div>
+    <div class="fox"><img src="assets/img/fox-footer.svg" alt=""></div>
+  </footer>
+
+  <!-- ХЕДЕР -->
+  <header class="site-header">
+    <a class="logo" href="index.html" data-nav><img src="assets/img/logo-dark.png" alt="ЛАТА ТРЭК"></a>
+    <nav>
+      <a href="index.html" data-nav>СКЛОНЫ</a>
+      <a href="tubing.html">ТЮБИНГ</a>
+      <a href="#">ОБУЧЕНИЕ</a>
+      <a href="#">МЕРОПРИЯТИЯ</a>
+      <a href="#">ВОЛЕЙБОЛ</a>
+      <a href="#">ТЕННИС</a>
+      <a href="#">КОНТАКТЫ</a>
+    </nav>
+    <span class="phone">+7 (495) 780-22-77</span>
+  </header>
+
+</div>
+
+<!-- ПЕРЕХОД -->
+<div id="wipe"><span class="edge"></span></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
