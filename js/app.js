@@ -4,10 +4,15 @@
   const isStatic = html.classList.contains('static');
   const isHome = document.body.classList.contains('page-home');
 
-  /* ---- масштаб под окно: канва 1440 ---- */
+  /* ---- «резина»: на десктопе канва 1440 масштабируется под любую ширину
+         (включая широкоформат — полосы и футер всегда от края до края);
+         ниже 1024 включается настоящая мобильная/планшетная вёрстка ---- */
   const fit = () => {
-    const z = Math.min(1, window.innerWidth / 1440);
-    html.style.zoom = z === 1 ? '' : String(z);
+    if (window.innerWidth >= 1024) {
+      html.style.zoom = String(window.innerWidth / 1440);
+    } else {
+      html.style.zoom = '';
+    }
   };
   fit();
   window.addEventListener('resize', fit);
@@ -146,6 +151,12 @@
           { transform: 'translate(-50%, -50%)' },
           { transform: `translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px)) scale(${s})` },
         ],
+        { duration: 950, easing: 'cubic-bezier(0.72, 0, 0.16, 1)', fill: 'forwards' }
+      );
+      // остаток зума фото уходит вместе с переносом — кадр «встаёт на место» глубже
+      const mediaImg = strip.querySelector('.pre-media img');
+      if (mediaImg) mediaImg.animate(
+        [{ transform: 'scale(1.12)' }, { transform: 'scale(1)' }],
         { duration: 950, easing: 'cubic-bezier(0.72, 0, 0.16, 1)', fill: 'forwards' }
       );
       anim.onfinish = () => {

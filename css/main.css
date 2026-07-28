@@ -139,9 +139,9 @@ html.preloading body { overflow: hidden; }
 }
 
 /* ================= ГЛАВНАЯ ================= */
-/* декор */
-.home-stripe-1 { left: -304.35px; top: 1278.55px; transform: rotate(-15deg); }
-.home-stripe-2 { left: -304.35px; top: 3008.36px; transform: rotate(15deg) scaleY(-1); }
+/* декор: scaleX растягивает мазок вдоль, чтобы рваные концы всегда были за краем экрана */
+.home-stripe-1 { left: -304.35px; top: 1278.55px; transform: rotate(-15deg) scaleX(1.4); }
+.home-stripe-2 { left: -304.35px; top: 3008.36px; transform: rotate(15deg) scaleY(-1) scaleX(1.4); }
 
 /* hero */
 .hero-badge { position: absolute; left: 114px; top: 143px; width: 284.59px; height: 44.79px; z-index: 4; }
@@ -257,7 +257,7 @@ html.preloading body { overflow: hidden; }
 .fun-card.p3 .more { top: 389.4px; }
 .fun-card.p4 .num { top: 270.8px; } .fun-card.p4 .ttl { top: 296.8px; } .fun-card.p4 .dsc { top: 338.9px; width: 540px; }
 .fun-card.p4 .more { top: 392.8px; }
-.fun-card.p3 .pic img { width: 126.49%; height: 134.56%; margin-left: -26.53%; margin-top: -12.06%; object-fit: fill; }
+.fun-card.p3 .pic img { object-position: 50% 32%; }
 
 /* дополнительные активности */
 .act-h2 { position: absolute; left: 120px; top: 3003.51px; width: 900px; }
@@ -314,8 +314,8 @@ html.preloading body { overflow: hidden; }
 .site-footer .fox img { width: 100%; height: 100%; }
 
 /* ================= ТЮБИНГ ================= */
-.tub-stripe-top { left: -224.44px; top: 1183.94px; transform: rotate(-15deg); }
-.tub-stripe-bottom { left: -224.44px; top: 2670.95px; transform: rotate(15deg) scaleY(-1); }
+.tub-stripe-top { left: -224.44px; top: 1183.94px; transform: rotate(-15deg) scaleX(1.4); }
+.tub-stripe-bottom { left: -224.44px; top: 2670.95px; transform: rotate(15deg) scaleY(-1) scaleX(1.4); }
 
 /* точный кроп из макета: h 106.39%, top -5.32%, w 104.16% */
 .page-tubing .hero-strip .media img {
@@ -452,10 +452,13 @@ html.preloading #preloader { display: block; }
   will-change: transform;
 }
 #preloader .pre-media { position: absolute; inset: 0; overflow: hidden;
-  opacity: 0; filter: blur(8px); transform: scale(1.03);
-  transition: opacity 1900ms var(--ease-out), filter 1900ms var(--ease-out), transform 2400ms var(--ease-out); }
-#preloader.media-in .pre-media { opacity: 1; filter: blur(0); transform: scale(1); }
-#preloader .pre-media img { width: 100%; height: 100%; object-fit: cover; object-position: bottom; }
+  opacity: 0; filter: blur(8px);
+  transition: opacity 1900ms var(--ease-out), filter 1900ms var(--ease-out); }
+#preloader.media-in .pre-media { opacity: 1; filter: blur(0); }
+/* фото в лоадере заметно крупнее (глубже кадр): оседает к 1.12, остаток зума уходит во время FLIP */
+#preloader .pre-media img { width: 100%; height: 100%; object-fit: cover; object-position: bottom;
+  transform: scale(1.24); transition: transform 2400ms var(--ease-out); will-change: transform; }
+#preloader.media-in .pre-media img { transform: scale(1.12); }
 #preloader .pre-grad { position: absolute; inset: 0;
   background: linear-gradient(72.45deg, rgb(245, 243, 239) 5.6%, rgba(255, 255, 255, 0) 46.7%); }
 #preloader .line { position: absolute; left: 0; width: 100%; height: 1px; background: #000;
@@ -513,4 +516,164 @@ html.static #preloader, html.static #wipe { display: none !important; }
 html.static .rv { opacity: 1; transform: none; transition: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* ================================================================
+   АДАПТИВ < 1024px: настоящая мобильная/планшетная вёрстка (поток)
+   ================================================================ */
+@media (max-width: 1023px) {
+  html { zoom: normal; }
+  .canvas, .page-home .canvas, .page-tubing .canvas {
+    width: 100%; height: auto; overflow: visible; padding-top: 96px;
+  }
+  .stripe { display: none; }
+  .h2 { font-size: clamp(28px, 7vw, 44px); }
+
+  /* --- хедер: фиксированный, меню скроллится --- */
+  .site-header {
+    position: fixed; left: 0; top: 0; width: 100%; height: auto;
+    transform: none !important;
+    box-shadow: 0 2px 0 #c1b9ad;
+    padding: 10px 16px 8px;
+    display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center;
+  }
+  .site-header .logo { width: 128px; height: 28px; }
+  .site-header .phone { margin-left: auto; font-size: 12px; }
+  .site-header nav { order: 3; width: 100%; overflow-x: auto; gap: 16px; padding: 4px 0 6px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .site-header nav::-webkit-scrollbar { display: none; }
+
+  /* --- hero --- */
+  .hero-strip { position: relative; left: 0; top: 0; width: 100%; height: 58vw; max-height: 420px; border-left: none; border-right: none; }
+  .hero-badge { position: relative; left: 0; top: 0; margin: 20px 16px 4px; }
+  .hero-paint-h1, .tub-paint-h1 { display: none; }
+  .h1-hero, .home .h1-hero, .page-tubing .h1-hero { position: relative; left: 0; top: 0; margin: 4px 16px 8px; font-size: clamp(44px, 12vw, 95px); line-height: 1.18; }
+  .home .h1-hero .mask:nth-child(2) > span { display: inline-block; background: var(--orange); padding: 0 14px 0 8px; margin-left: -8px; }
+  .hero-btns { position: relative; left: 0; top: 0; margin: 12px 16px 30px; flex-direction: column; }
+  .hero-btns .btn { width: 100%; max-width: 380px; }
+
+  /* --- веб-камеры --- */
+  .webcams { position: relative; left: 0; top: 0; width: auto; height: auto; margin: 0 16px 14px; padding: 14px 12px 4px; }
+  .webcams .cap { position: static; margin-bottom: 4px; }
+  .webcams .hours { position: static; display: block; font-size: 11.5px; white-space: normal; margin-bottom: 12px; }
+  .webcams .cam { position: static; width: 100%; height: auto; aspect-ratio: 391 / 260; margin-bottom: 10px; }
+  .fox-webcams, .status-paint { display: none; }
+  .status-row { position: static; margin: 0 16px 26px; flex-wrap: wrap; gap: 8px 18px; }
+  .status-row .lite { color: var(--ink); }
+
+  /* --- о комплексе + погода --- */
+  .about-h2 { position: static; width: auto; margin: 26px 16px 12px; }
+  .about-txt { position: static; width: auto; margin: 0 16px 12px; font-size: 16px; }
+  .about-more { position: static; margin: 0 16px; display: inline-block; }
+  .weather { position: static; width: auto; max-width: 520px; margin: 20px 16px 28px; padding: 24px 20px; }
+  .weather .temp .deg { font-size: clamp(52px, 15vw, 72px); line-height: 1.05; }
+  .weather .metrics { gap: 24px; flex-wrap: wrap; }
+
+  /* --- промо (бейдж рисуем псевдоэлементом, чтобы был над плашкой) --- */
+  .promo-banner, .tub-promo, .seasonal-paint, .seasonal-label { display: none; }
+  .promo-title, .tub-promo-title {
+    position: static; width: auto; margin: 26px 16px 14px;
+    background: var(--orange); padding: 20px 18px; box-shadow: 8px 8px 0 var(--ink);
+    font-size: clamp(19px, 4.8vw, 32px); white-space: normal;
+  }
+  .promo-title::before, .tub-promo-title::before {
+    content: 'СЕЗОННОЕ ПРЕДЛОЖЕНИЕ';
+    display: block; width: max-content; max-width: 100%; background: var(--warn); color: var(--navy);
+    font-size: 13px; letter-spacing: 0.3px; padding: 7px 12px; margin: -34px 0 12px;
+    box-shadow: 4px 4px 0 var(--ink); transform: rotate(-1deg);
+  }
+  .promo-title::before { margin-top: -36px; }
+  .promo-btn { position: static; margin: 0 16px 30px; width: calc(100% - 32px); max-width: 300px; }
+
+  /* --- карточки развлечений --- */
+  .fun-h2 { position: static; width: auto; margin: 26px 16px 18px; }
+  .fun-grid { display: grid; grid-template-columns: 1fr; gap: 24px; margin: 0 16px 30px; }
+  .fun-card { position: static; width: auto; height: auto; padding-bottom: 16px; }
+  .fun-card .pic { position: relative; left: 0; top: 0; width: calc(100% + 4px); margin: -2px -2px 0; height: 46vw; max-height: 280px; }
+  .fun-card .num { position: static; margin: 14px 18px 2px; }
+  .fun-card .ttl { position: static; width: auto; margin: 0 18px; font-size: clamp(19px, 5vw, 26px); }
+  .fun-card .dsc { position: static; width: auto !important; margin: 6px 18px 10px; }
+  .fun-card .more { position: static; margin: 0 18px; display: inline-block; }
+
+  /* --- дополнительные активности --- */
+  .act-h2 { position: static; width: auto; margin: 26px 16px 18px; }
+  .act-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin: 0 16px 30px; }
+  .act-card { position: relative; left: 0 !important; top: 0; width: auto; height: auto; padding-bottom: 12px; }
+  .act-card .navy { position: relative; left: 0; top: 0; width: calc(100% + 4px); margin: -2px -2px 0; height: auto; aspect-ratio: 1; }
+  .act-card .icon { top: 5%; left: 50%; transform: translateX(-50%); width: 72%; height: auto; }
+  .act-card:hover .icon { transform: translateX(-50%) translateY(-6px); }
+  .act-card .icon img { width: 100%; height: auto; }
+  .act-card .ttl { position: static; width: auto; margin: 12px 14px 4px; font-size: 15px; }
+  .act-card .dsc { position: static; width: auto; margin: 0 14px 10px; font-size: 12.5px; }
+  .act-card .more { position: static; margin: 0 14px; display: inline-block; }
+
+  /* --- FAQ --- */
+  .faq-h2 { position: static; width: auto; margin: 26px 16px 8px; }
+  .faq-list { margin: 0 16px 34px; }
+  .faq-list > div { border-bottom: 2px solid var(--ink); padding: 16px 0; }
+  .faq-num { position: static; font-size: 15px; }
+  .faq-q { position: static; width: auto; margin: 4px 0 8px; font-size: clamp(17px, 4.6vw, 24px); }
+  .faq-a { position: static; width: auto; font-size: 15px; }
+  .faq-rule { display: none; }
+
+  /* --- футер --- */
+  .site-footer, .page-home .site-footer, .page-tubing .site-footer {
+    position: relative; left: 0; top: 0; width: 100%; height: auto;
+    padding: 30px 16px 40px; border-left: none; border-right: none;
+  }
+  .site-footer .flogo { position: static; width: 178px; height: auto; margin-bottom: 16px; }
+  .site-footer .contacts { position: static; width: auto; margin-bottom: 16px; }
+  .site-footer .col.info, .site-footer .col.legal { position: static; width: auto; margin-bottom: 14px; }
+  .site-footer .copy { position: static; width: auto; margin-bottom: 14px; }
+  .site-footer .madebox, .site-footer .madeslab, .site-footer .www { display: none; }
+  .site-footer .made { position: static; }
+  .site-footer .fox { left: auto; right: -28px; top: auto; bottom: -44px; opacity: 0.9; }
+
+  /* --- тюбинг --- */
+  .tub-note { position: static; width: auto; margin: 0 16px 8px; font-size: 16px; }
+  .sec-prices, .sec-deposit { position: static; width: auto; margin: 6px 16px 6px; gap: 18px; }
+  .row { flex-direction: column; align-items: stretch; gap: 18px; }
+  .price-card, .info-card, .deposit-sum, .deposit-info { width: auto; height: auto; padding: 22px 18px; }
+  .price-card .hrow .cell, .price-card .prow .cell { width: auto; min-width: 84px; }
+  .price-card .hrow .cell.last, .price-card .prow .cell.last { width: auto; min-width: 96px; }
+  .price-card .prow .cell { font-size: clamp(17px, 4.6vw, 22px); }
+  .price-card .prow .nm { font-size: 16px; }
+  .deposit-sum .big { font-size: clamp(50px, 15vw, 96px); line-height: 1.1; }
+  .warn-badge { white-space: normal; }
+  .tub-rules-h2 { position: static; margin: 26px 16px 16px; white-space: normal; }
+  .rules-cols { position: static; width: auto; height: auto; margin: 0 16px; }
+  .rule-card { position: static; left: 0; width: auto; height: auto; margin-bottom: 18px; padding: 22px 18px; }
+  .important-card { position: static; width: auto; margin: 0 16px 14px; padding: 22px 18px; }
+  .rules-link { position: static; width: auto; margin: 0 16px 26px; }
+  .tub-hours-h2 { position: static; width: auto; margin: 26px 16px 16px; }
+  .hours-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 0 16px; }
+  .hours-card { position: static; left: 0 !important; width: auto; height: auto; padding: 18px 18px 22px; }
+  .hours-card .cap { position: static; font-size: 12px; white-space: normal; }
+  .hours-card .time { position: static; display: block; margin-top: 6px; font-size: clamp(26px, 8vw, 36px); }
+  .hours-note { position: static; width: auto; margin: 14px 16px 8px; }
+  .tub-photos-h2 { position: static; width: auto; margin: 26px 16px 16px; }
+  .gal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0 16px 30px; }
+  .gal { position: static; left: 0 !important; top: 0; width: auto; height: auto; aspect-ratio: 393 / 265; }
+  .cta { position: relative; left: 0; top: 0; width: auto; height: auto; margin: 0 16px 34px; padding: 26px 20px; }
+  .cta .left { position: static; width: auto; margin-bottom: 20px; }
+  .cta .left h3 { font-size: clamp(26px, 7vw, 40px); line-height: 1.15; }
+  .cta .card { position: static; width: auto; padding: 24px 20px; }
+  .cta .card .phone { font-size: clamp(20px, 5.6vw, 30px); }
+
+  /* --- прелоадер на узких экранах --- */
+  #preloader .pre-strip { width: 103vw; height: 48.1vw; }
+  #preloader .pre-logo { top: max(28px, calc(25% - 12vw - 18px)); }
+  #preloader .pre-pct { top: calc(75% + 12vw + 14px); line-height: 1; }
+}
+
+/* --- планшет: сетки пошире --- */
+@media (min-width: 641px) and (max-width: 1023px) {
+  .fun-grid { grid-template-columns: 1fr 1fr; }
+  .fun-card .pic { height: 24vw; }
+  .act-grid { grid-template-columns: repeat(4, 1fr); }
+  .act-card .ttl { font-size: 13px; }
+  .hours-grid { grid-template-columns: 1fr 1fr; }
+  .gal-grid { grid-template-columns: repeat(3, 1fr); }
+  .hero-btns { flex-direction: row; }
+  .cta .left { margin-bottom: 24px; }
+  .webcams .cams-row { display: flex; gap: 10px; }
 }
