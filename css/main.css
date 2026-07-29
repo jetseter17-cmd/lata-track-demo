@@ -95,7 +95,7 @@ html.preloading body { overflow: hidden; }
 .btn .flame img { width: 100%; height: 100%; }
 
 .more {
-  font-family: var(--f-mono); font-weight: 700; color: var(--orange); white-space: nowrap; cursor: pointer;
+  font-family: var(--f-head); font-weight: 700; color: var(--orange); white-space: nowrap; cursor: pointer;
   display: inline-block; transition: transform 150ms var(--ease-out);
 }
 .more:hover { transform: translateX(4px); }
@@ -168,8 +168,9 @@ html.preloading body { overflow: hidden; }
 .webcams .cap { position: absolute; left: 23.75px; top: 17.72px; display: flex; gap: 6px; align-items: center; }
 .webcams .cap img { width: 12px; height: 12px; }
 .webcams .cap span, .webcams .hours {
-  font-family: var(--f-mono); font-size: 14px; letter-spacing: 0.28px; color: var(--beige); white-space: nowrap;
+  font-family: var(--f-head); font-weight: 500; font-size: 14px; letter-spacing: 0.4px; color: var(--beige); white-space: nowrap;
 }
+.webcams .hours .nb { white-space: nowrap; }
 .webcams .hours { position: absolute; left: 634.09px; top: 18.22px; }
 .webcams .cam { position: absolute; top: 68.76px; width: 391.26px; height: 260.19px; overflow: hidden; }
 .webcams .cam img { width: 100%; height: 100%; object-fit: cover; transition: transform 600ms var(--ease-out); }
@@ -207,7 +208,7 @@ html.preloading body { overflow: hidden; }
 .weather .top .wlogo { width: 131.99px; height: 28.8px; object-fit: cover; }
 .weather .badge { display: flex; gap: 8px; align-items: center; background: var(--open); padding: 6px 12px; }
 .weather .badge img { width: 7px; height: 7px; }
-.weather .badge span { font-family: var(--f-mono); font-weight: 700; font-size: 12px; color: var(--ink); white-space: nowrap; }
+.weather .badge span { font-family: var(--f-head); font-weight: 700; font-size: 12px; color: var(--ink); white-space: nowrap; }
 .weather .temp { display: flex; gap: 16px; align-items: flex-end; white-space: nowrap; }
 .weather .temp .deg { font-family: var(--f-mono); font-weight: 700; font-size: 72px; line-height: 76px; }
 .weather .temp .cond { display: flex; flex-direction: column; gap: 2px; }
@@ -292,13 +293,13 @@ html.preloading body { overflow: hidden; }
 .site-footer .flogo { position: absolute; left: 118px; top: 58px; width: 222.86px; height: 48.62px; object-fit: cover; }
 .site-footer .contacts { position: absolute; left: 118px; top: 149.92px; width: 320px;
   font-size: 16px; color: var(--fog); }
-.site-footer .col { position: absolute; font-family: var(--f-mono); font-size: 14px;
-  letter-spacing: 0.28px; color: var(--fog); font-weight: 700; }
+.site-footer .col { position: absolute; font-family: var(--f-head); font-size: 14px;
+  letter-spacing: 0.3px; color: var(--fog); font-weight: 400; }
 .site-footer .col b { display: block; color: #fff; }
 .site-footer .col.info { left: 517.6px; top: 62px; width: 320px; }
 .site-footer .col.legal { left: 517.6px; top: 148px; width: 420px; }
 .site-footer .copy { position: absolute; left: 1118px; top: 62px; width: 260px;
-  font-family: var(--f-mono); font-size: 14px; letter-spacing: 0.28px; color: var(--beige); }
+  font-family: var(--f-head); font-weight: 500; font-size: 14px; letter-spacing: 0.3px; color: var(--beige); }
 .site-footer .mylogo { position: absolute; left: 1118px; top: 163.4px; width: 163.23px; height: 54.57px; }
 .site-footer .fox { position: absolute; left: 1218.53px; top: 113.19px; width: 159.99px; height: 209.56px; }
 .site-footer .fox img { width: 100%; height: 100%; }
@@ -331,7 +332,7 @@ html.preloading body { overflow: hidden; }
 .sec-deposit { left: 121px; top: 2105px; width: 1287px; }
 .row { display: flex; gap: 24px; align-items: flex-start; }
 
-.mono-label { font-family: var(--f-mono); font-weight: 700; font-size: 14px; letter-spacing: 0.56px; color: var(--muted); }
+.mono-label { font-family: var(--f-head); font-weight: 600; font-size: 14px; letter-spacing: 0.56px; color: var(--muted); }
 
 /* цены */
 .price-card { width: 760px; padding: 36px 40px; display: flex; flex-direction: column; }
@@ -343,7 +344,7 @@ html.preloading body { overflow: hidden; }
 .price-card .rule { height: 2px; background: var(--ink); width: 100%; }
 .price-card .prow { display: flex; gap: 16px; align-items: center; padding: 20px 8px; width: 100%; }
 .price-card .prow.zebra { background: var(--snow); }
-.price-card .prow .nm { flex: 1 0 0; font-family: var(--f-mono); font-weight: 700; font-size: 18px; color: var(--ink); }
+.price-card .prow .nm { flex: 1 0 0; font-family: var(--f-head); font-weight: 600; font-size: 18px; color: var(--ink); }
 .price-card .prow .cell { width: 150px; display: flex; justify-content: flex-end;
   font-family: var(--f-mono); font-weight: 700; font-size: 22px; color: var(--ink); white-space: nowrap; }
 .price-card .prow .cell.last { width: 170px; }
@@ -357,7 +358,7 @@ html.preloading body { overflow: hidden; }
 .rules-cols { position: absolute; left: 121px; top: 1538px; width: 1263px; height: 283px; z-index: 2; }
 .rule-card { position: absolute; top: 0; height: 270px; padding: 36px; display: flex; flex-direction: column; gap: 20px; }
 .rule-card.allow { left: 0; width: 598px; } .rule-card.deny { left: 622px; width: 597px; }
-.rule-card .cap { font-family: var(--f-mono); font-weight: 700; font-size: 15px; letter-spacing: 0.6px; }
+.rule-card .cap { font-family: var(--f-head); font-weight: 700; font-size: 15px; letter-spacing: 0.6px; }
 .rule-card.allow .cap { color: var(--open); } .rule-card.deny .cap { color: var(--closed); }
 .rule-card .bullet .dot { margin-top: 6px; width: 12px; height: 12px; }
 .rule-card.allow .bullet .dot { background: var(--open); } .rule-card.deny .bullet .dot { background: var(--closed); }
@@ -365,25 +366,25 @@ html.preloading body { overflow: hidden; }
 .important-card { position: absolute; left: 121px; top: 1845px; width: 1220px; z-index: 2;
   background: var(--ink); box-shadow: 8px 8px 0 0 var(--ink);
   padding: 32px 40px; display: flex; flex-direction: column; gap: 12px; }
-.important-card .cap { font-family: var(--f-mono); font-weight: 700; font-size: 15px; letter-spacing: 0.6px; color: var(--orange); }
+.important-card .cap { font-family: var(--f-head); font-weight: 700; font-size: 15px; letter-spacing: 0.6px; color: var(--orange); }
 .important-card p { font-size: 17px; line-height: 26px; color: #fff; }
 .rules-link { position: absolute; left: 121px; top: 2019px; width: 1220px; display: flex; justify-content: flex-end; z-index: 2; }
 .rules-link .more { color: var(--ink); font-size: 13px; letter-spacing: 0.26px; }
 
 /* залог */
-.deposit-sum { width: 600px; padding: 44px 48px; display: flex; flex-direction: column; gap: 8px; font-family: var(--f-mono); font-weight: 700; }
-.deposit-sum .cap, .deposit-sum .sub { font-size: 14px; letter-spacing: 0.56px; color: var(--muted); }
-.deposit-sum .big { font-size: 96px; line-height: 100px; color: var(--ink); white-space: nowrap; }
+.deposit-sum { width: 600px; padding: 44px 48px; display: flex; flex-direction: column; gap: 8px; }
+.deposit-sum .cap, .deposit-sum .sub { font-family: var(--f-head); font-weight: 600; font-size: 14px; letter-spacing: 0.56px; color: var(--muted); }
+.deposit-sum .big { font-family: var(--f-mono); font-weight: 700; font-size: 96px; line-height: 100px; color: var(--ink); white-space: nowrap; }
 .deposit-info { width: 604px; height: 317px; padding: 40px; display: flex; flex-direction: column; gap: 20px; }
 .deposit-info .txt { font-size: 16px; line-height: 24px; color: var(--ink2); }
 .warn-badge { background: var(--warn); padding: 12px 18px; align-self: flex-start;
-  font-family: var(--f-mono); font-weight: 700; font-size: 14px; letter-spacing: 0.28px; color: var(--ink); white-space: nowrap; }
+  font-family: var(--f-head); font-weight: 700; font-size: 14px; letter-spacing: 0.28px; color: var(--ink); white-space: nowrap; }
 
 /* режим работы */
 .tub-hours-h2 { position: absolute; left: 120.96px; top: 2547.37px; width: 1100px; }
 .hours-card { position: absolute; width: 600px; height: 120px; z-index: 2;
   background: #fff; border: 2px solid var(--ink); filter: drop-shadow(8px 8px 0 var(--ink)); }
-.hours-card .cap { position: absolute; left: 30px; top: 22px; font-family: var(--f-mono); font-weight: 700;
+.hours-card .cap { position: absolute; left: 30px; top: 22px; font-family: var(--f-head); font-weight: 600;
   font-size: 14px; letter-spacing: 0.28px; color: var(--muted2); white-space: nowrap; }
 .hours-card .time { position: absolute; left: 30px; top: 50px; font-family: var(--f-head); font-weight: 800;
   font-size: 36px; color: var(--ink); white-space: nowrap; }
@@ -406,13 +407,13 @@ html.preloading body { overflow: hidden; }
 .cta .fox { position: absolute; left: -70.14px; top: -222.47px; width: 437.42px; height: 572.95px; }
 .cta .fox img { width: 100%; height: 100%; }
 .cta .left { position: absolute; left: 64px; top: 91.5px; width: 596px; display: flex; flex-direction: column; gap: 18px; }
-.cta .left .cap { font-family: var(--f-mono); font-weight: 700; font-size: 14px; letter-spacing: 0.56px; color: var(--orange); }
+.cta .left .cap { font-family: var(--f-head); font-weight: 700; font-size: 14px; letter-spacing: 0.56px; color: var(--orange); }
 .cta .left h3 { font-family: var(--f-head); font-weight: 800; font-size: 40px; line-height: 46px; color: #fff; }
 .cta .left .txt { font-size: 18px; line-height: 27px; color: #fff; }
 .cta .left .sub { font-size: 15px; color: var(--muted); }
 .cta .card { position: absolute; left: 716px; top: 64px; width: 440px; background: #fff;
   padding: 32px; display: flex; flex-direction: column; gap: 14px; }
-.cta .card .cap { font-family: var(--f-mono); font-weight: 700; font-size: 13px; letter-spacing: 0.52px; color: var(--muted); }
+.cta .card .cap { font-family: var(--f-head); font-weight: 600; font-size: 13px; letter-spacing: 0.52px; color: var(--muted); }
 .cta .card .phone { font-family: var(--f-mono); font-weight: 700; font-size: 30px; color: var(--ink); }
 .cta .card .btns { display: flex; flex-direction: column; gap: 12px; padding-top: 8px; }
 .cta .card .btn { padding: 16px 24px; font-family: var(--f-body); font-weight: 500; font-size: 15px; letter-spacing: 0.5px; }
@@ -420,6 +421,10 @@ html.preloading body { overflow: hidden; }
 .cta .card .btn.solid:hover { background: #c85f44; }
 .cta .card .btn.line { background: #fff; border: 2px solid var(--ink); color: var(--ink); }
 .cta .card .btn.line:hover { background: var(--beige); }
+
+/* бургер и шторка меню — только мобила */
+.burger { display: none; }
+.nav-dim { display: none; }
 
 /* ================= ПРЕЛОАДЕР ================= */
 #preloader {
@@ -515,32 +520,65 @@ html.static .rv { opacity: 1; transform: none; transition: none; }
 @media (max-width: 1023px) {
   html { zoom: normal; }
   .canvas, .page-home .canvas, .page-tubing .canvas {
-    width: 100%; height: auto; overflow: visible; padding-top: 96px;
+    width: 100%; height: auto; overflow: visible; padding-top: 56px;
   }
   .stripe { display: none; }
   .h2 { font-size: clamp(28px, 7vw, 44px); }
 
-  /* --- хедер: фиксированный, меню скроллится --- */
+  /* --- хедер: лого / телефон / бургер, меню шторкой справа --- */
   .site-header {
-    position: fixed; left: 0; top: 0; width: 100%; height: auto;
+    position: fixed; left: 0; top: 0; width: 100%; height: 56px;
     transform: none !important;
     box-shadow: 0 2px 0 #c1b9ad;
-    padding: 10px 16px 8px;
-    display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center;
+    padding: 0 8px 0 16px;
+    display: flex; gap: 10px; align-items: center;
   }
-  .site-header .logo { width: 128px; height: 28px; }
-  .site-header .phone { margin-left: auto; font-size: 12px; }
-  .site-header nav { order: 3; width: 100%; overflow-x: auto; gap: 16px; padding: 4px 0 6px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-  .site-header nav::-webkit-scrollbar { display: none; }
+  .site-header .logo { width: 118px; height: 26px; }
+  .site-header .phone { margin: 0 auto; font-size: 13px; }
+  .site-header nav {
+    position: fixed; top: 56px; right: 0; bottom: 0;
+    width: min(320px, 84vw); background: var(--beige);
+    border-left: 2px solid var(--ink);
+    display: flex; flex-direction: column; gap: 0; padding: 24px;
+    transform: translateX(105%); transition: transform 360ms var(--ease-in-out);
+    overflow-y: auto;
+  }
+  html.nav-open .site-header nav { transform: translateX(0); }
+  .site-header nav a { font-size: 18px; font-weight: 600; padding: 15px 0; border-bottom: 1px solid rgba(16, 20, 24, 0.12); }
+  .site-header nav a::after { display: none; }
+  .burger {
+    display: flex; flex-direction: column; justify-content: center; gap: 5px;
+    width: 44px; height: 44px; padding: 10px; flex: none;
+    background: none; border: none; cursor: pointer;
+  }
+  .burger span { display: block; height: 2px; width: 100%; background: var(--ink);
+    transition: transform 300ms var(--ease-in-out), opacity 180ms var(--ease-out); }
+  html.nav-open .burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  html.nav-open .burger span:nth-child(2) { opacity: 0; }
+  html.nav-open .burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-dim { display: block; position: fixed; inset: 0; background: rgba(16, 20, 24, 0.55);
+    opacity: 0; pointer-events: none; transition: opacity 300ms var(--ease-out); z-index: 25; }
+  html.nav-open .nav-dim { opacity: 1; pointer-events: auto; }
 
-  /* --- hero --- */
-  .hero-strip { position: relative; left: 0; top: 0; width: 100%; height: 58vw; max-height: 420px; border-left: none; border-right: none; }
-  .hero-badge { position: relative; left: 0; top: 0; margin: 20px 16px 4px; }
+  /* --- hero: первый экран, заголовок — часть картинки --- */
+  .hero-strip { position: relative; left: 0; top: 0; width: 100%; border-left: none; border-right: none; }
+  .page-home .hero-strip { height: calc(100svh - 56px); }
+  .page-tubing .hero-strip { height: 58vw; max-height: 420px; }
+  .page-home .hero-strip .media img { object-position: 62% 50%; }
   .hero-paint-h1, .tub-paint-h1 { display: none; }
-  .h1-hero, .home .h1-hero, .page-tubing .h1-hero { position: relative; left: 0; top: 0; margin: 4px 16px 8px; font-size: clamp(44px, 12vw, 95px); line-height: 1.18; }
-  .home .h1-hero .mask:nth-child(2) > span { display: inline-block; background: var(--orange); padding: 0 14px 0 8px; margin-left: -8px; }
-  .hero-btns { position: relative; left: 0; top: 0; margin: 12px 16px 30px; flex-direction: column; }
-  .hero-btns .btn { width: 100%; max-width: 380px; }
+  .hero-badge { position: absolute; left: 16px; top: 74px; margin: 0; z-index: 4; transform: scale(0.82); transform-origin: left top; }
+  .h1-hero, .home .h1-hero { position: absolute; left: 16px; top: 126px; margin: 0; font-size: clamp(36px, 10.5vw, 46px); line-height: 1.24; }
+  .home .h1-hero .mask:nth-child(2) > span {
+    display: inline-block; padding: 2px 16px 6px 10px; margin-left: -10px;
+    background: url('../assets/img/paint-h1.svg') 50% 50% / 100% 100% no-repeat;
+  }
+  .page-tubing .h1-hero { position: relative; left: 0; top: 0; margin: 10px 16px 6px; font-size: clamp(40px, 11vw, 56px); line-height: 1.15; }
+  .page-tubing .h1-hero .mask > span {
+    display: inline-block; padding: 2px 18px 8px 10px; margin-left: -10px;
+    background: url('../assets/img/tub-paint-h1.svg') 50% 50% / 100% 100% no-repeat;
+  }
+  .hero-btns { position: absolute; left: 16px; right: 16px; top: calc(100svh - 148px); margin: 0; flex-direction: column; z-index: 4; }
+  .hero-btns .btn { width: 100%; max-width: none; }
 
   /* --- веб-камеры --- */
   .webcams { position: relative; left: 0; top: 0; width: auto; height: auto; margin: 0 16px 14px; padding: 14px 12px 4px; }
@@ -550,19 +588,22 @@ html.static .rv { opacity: 1; transform: none; transition: none; }
   .fox-webcams, .status-paint { display: none; }
   .status-row { position: static; margin: 0 16px 26px; flex-wrap: wrap; gap: 8px 18px; }
   .status-row .lite { color: var(--ink); }
+  .status-row .s img { display: none; }
+  .status-row .s::before { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--open); flex: none; }
+  .status-row .s span { color: var(--open); }
 
   /* --- о комплексе + погода --- */
-  .about-h2 { position: static; width: auto; margin: 26px 16px 12px; }
+  .about-h2 { position: static; width: auto; margin: 64px 16px 16px; }
   .about-txt { position: static; width: auto; margin: 0 16px 12px; font-size: 16px; }
   .about-more { position: static; margin: 0 16px; display: inline-block; }
-  .weather { position: static; width: auto; max-width: 520px; margin: 20px 16px 28px; padding: 24px 20px; }
+  .weather { position: static; width: auto; max-width: 520px; margin: 28px 16px 0; padding: 24px 20px; }
   .weather .temp .deg { font-size: clamp(52px, 15vw, 72px); line-height: 1.05; }
   .weather .metrics { gap: 24px; flex-wrap: wrap; }
 
   /* --- промо (бейдж рисуем псевдоэлементом, чтобы был над плашкой) --- */
   .promo-banner, .tub-promo, .seasonal-paint, .seasonal-label { display: none; }
   .promo-title, .tub-promo-title {
-    position: static; width: auto; margin: 26px 16px 14px;
+    position: static; width: auto; margin: 64px 16px 14px;
     background: var(--orange); padding: 20px 18px; box-shadow: 8px 8px 0 var(--ink);
     font-size: clamp(19px, 4.8vw, 32px); white-space: normal;
   }
@@ -573,11 +614,11 @@ html.static .rv { opacity: 1; transform: none; transition: none; }
     box-shadow: 4px 4px 0 var(--ink); transform: rotate(-1deg);
   }
   .promo-title::before { margin-top: -36px; }
-  .promo-btn { position: static; margin: 0 16px 30px; width: calc(100% - 32px); max-width: 300px; }
+  .promo-btn { position: static; margin: 0 16px; width: calc(100% - 32px); max-width: none; }
 
   /* --- карточки развлечений --- */
-  .fun-h2 { position: static; width: auto; margin: 26px 16px 18px; }
-  .fun-grid { display: grid; grid-template-columns: 1fr; gap: 24px; margin: 0 16px 30px; }
+  .fun-h2 { position: static; width: auto; margin: 64px 16px 20px; }
+  .fun-grid { display: grid; grid-template-columns: 1fr; gap: 24px; margin: 0 16px; }
   .fun-card { position: static; width: auto; height: auto; padding-bottom: 16px; }
   .fun-card .pic { position: relative; left: 0; top: 0; width: calc(100% + 4px); margin: -2px -2px 0; height: 46vw; max-height: 280px; }
   .fun-card .num { position: static; margin: 14px 18px 2px; }
@@ -586,20 +627,23 @@ html.static .rv { opacity: 1; transform: none; transition: none; }
   .fun-card .more { position: static; margin: 0 18px; display: inline-block; }
 
   /* --- дополнительные активности --- */
-  .act-h2 { position: static; width: auto; margin: 26px 16px 18px; }
-  .act-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin: 0 16px 30px; }
-  .act-card { position: relative; left: 0 !important; top: 0; width: auto; height: auto; padding-bottom: 12px; }
+  .act-h2 { position: static; width: auto; margin: 64px 16px 20px; }
+  .act-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin: 0 16px; }
+  .act-card { position: relative; left: 0 !important; top: 0; width: auto; height: auto; padding-bottom: 14px; display: flex; flex-direction: column; }
   .act-card .navy { position: relative; left: 0; top: 0; width: calc(100% + 4px); margin: -2px -2px 0; height: auto; aspect-ratio: 1; }
-  .act-card .icon { top: 5%; left: 50%; transform: translateX(-50%); width: 72%; height: auto; }
+  .act-card.a1 .icon, .act-card.a2 .icon, .act-card.a3 .icon, .act-card.a4 .icon {
+    left: 50%; top: 4%; transform: translateX(-50%); width: 68%; height: auto;
+  }
+  .act-card.a3 .icon { width: 54%; }
   .act-card:hover .icon { transform: translateX(-50%) translateY(-6px); }
   .act-card .icon img { width: 100%; height: auto; }
   .act-card .ttl { position: static; width: auto; margin: 12px 14px 4px; font-size: 15px; }
   .act-card .dsc { position: static; width: auto; margin: 0 14px 10px; font-size: 12.5px; }
-  .act-card .more { position: static; margin: 0 14px; display: inline-block; }
+  .act-card .more { position: static; margin: auto 14px 0; align-self: flex-start; padding-top: 8px; }
 
   /* --- FAQ --- */
-  .faq-h2 { position: static; width: auto; margin: 26px 16px 8px; }
-  .faq-list { margin: 0 16px 34px; }
+  .faq-h2 { position: static; width: auto; margin: 64px 16px 8px; }
+  .faq-list { margin: 0 16px 64px; }
   .faq-list > div { border-bottom: 2px solid var(--ink); padding: 16px 0; }
   .faq-num { position: static; font-size: 15px; }
   .faq-q { position: static; width: auto; margin: 4px 0 8px; font-size: clamp(17px, 4.6vw, 24px); }
@@ -609,50 +653,58 @@ html.static .rv { opacity: 1; transform: none; transition: none; }
   /* --- футер --- */
   .site-footer, .page-home .site-footer, .page-tubing .site-footer {
     position: relative; left: 0; top: 0; width: 100%; height: auto;
-    padding: 30px 16px 40px; border-left: none; border-right: none;
+    padding: 36px 16px 72px; border-left: none; border-right: none;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
   }
-  .site-footer .flogo { position: static; width: 178px; height: auto; margin-bottom: 16px; }
-  .site-footer .contacts { position: static; width: auto; margin-bottom: 16px; }
-  .site-footer .col.info, .site-footer .col.legal { position: static; width: auto; margin-bottom: 14px; }
-  .site-footer .copy { position: static; width: auto; margin-bottom: 14px; }
-  .site-footer .mylogo { position: static; width: 164px; height: auto; margin-top: 6px; }
+  .site-footer .flogo { position: static; width: 178px; height: auto; margin-bottom: 36px; }
+  .site-footer .contacts { position: static; width: auto; margin-bottom: 36px; }
+  .site-footer .col.info, .site-footer .col.legal { position: static; width: auto; margin-bottom: 36px; }
+  .site-footer .copy { position: static; width: auto; margin-bottom: 36px; }
+  .site-footer .copy p { display: inline; }
+  .site-footer .copy p + p::before { content: ' '; }
+  .site-footer .mylogo { position: static; width: 164px; height: auto; margin: 0; }
   .site-footer .fox { left: auto; right: -28px; top: auto; bottom: -44px; opacity: 0.9; }
 
   /* --- тюбинг --- */
   .tub-note { position: static; width: auto; margin: 0 16px 8px; font-size: 16px; }
-  .sec-prices, .sec-deposit { position: static; width: auto; margin: 6px 16px 6px; gap: 18px; }
+  .sec-prices, .sec-deposit { position: static; width: auto; margin: 56px 16px 0; gap: 18px; }
   .row { flex-direction: column; align-items: stretch; gap: 18px; }
   .price-card, .info-card, .deposit-sum, .deposit-info { width: auto; height: auto; padding: 22px 18px; }
-  .price-card .hrow .cell, .price-card .prow .cell { width: auto; min-width: 84px; }
-  .price-card .hrow .cell.last, .price-card .prow .cell.last { width: auto; min-width: 96px; }
-  .price-card .prow .cell { font-size: clamp(17px, 4.6vw, 22px); }
-  .price-card .prow .nm { font-size: 16px; }
+  .price-card .hrow, .price-card .prow { gap: 18px; }
+  .price-card .hrow .cell, .price-card .prow .cell { width: auto; min-width: 96px; }
+  .price-card .hrow .cell.last, .price-card .prow .cell.last { width: auto; min-width: 104px; }
+  .price-card .prow { padding: 18px 6px; }
+  .price-card .prow .cell { font-size: clamp(16px, 4.4vw, 20px); }
+  .price-card .prow .nm { font-size: 15px; }
   .deposit-sum .big { font-size: clamp(50px, 15vw, 96px); line-height: 1.1; }
   .warn-badge { white-space: normal; }
-  .tub-rules-h2 { position: static; margin: 26px 16px 16px; white-space: normal; }
+  .tub-rules-h2 { position: static; margin: 64px 16px 20px; white-space: normal; }
   .rules-cols { position: static; width: auto; height: auto; margin: 0 16px; }
   .rule-card { position: static; left: 0; width: auto; height: auto; margin-bottom: 18px; padding: 22px 18px; }
   .important-card { position: static; width: auto; margin: 0 16px 14px; padding: 22px 18px; }
-  .rules-link { position: static; width: auto; margin: 0 16px 26px; }
-  .tub-hours-h2 { position: static; width: auto; margin: 26px 16px 16px; }
+  .rules-link { position: static; width: auto; margin: 0 16px; }
+  .tub-hours-h2 { position: static; width: auto; margin: 64px 16px 20px; }
   .hours-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 0 16px; }
   .hours-card { position: static; left: 0 !important; width: auto; height: auto; padding: 18px 18px 22px; }
   .hours-card .cap { position: static; font-size: 12px; white-space: normal; }
   .hours-card .time { position: static; display: block; margin-top: 6px; font-size: clamp(26px, 8vw, 36px); }
   .hours-note { position: static; width: auto; margin: 14px 16px 8px; }
-  .tub-photos-h2 { position: static; width: auto; margin: 26px 16px 16px; }
-  .gal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0 16px 30px; }
-  .gal { position: static; left: 0 !important; top: 0; width: auto; height: auto; aspect-ratio: 393 / 265; }
-  .cta { position: relative; left: 0; top: 0; width: auto; height: auto; margin: 0 16px 34px; padding: 26px 20px; }
+  .tub-photos-h2 { position: static; width: auto; margin: 64px 16px 20px; }
+  .gal-grid { display: flex; overflow-x: auto; gap: 10px; margin: 0; padding: 0 16px 8px;
+    scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .gal-grid::-webkit-scrollbar { display: none; }
+  .gal { position: static; left: 0 !important; top: 0; width: auto; height: auto; aspect-ratio: 393 / 265; flex: 0 0 76%; scroll-snap-align: center; }
+  .cta { position: relative; left: 0; top: 0; width: auto; height: auto; margin: 64px 16px 64px; padding: 26px 20px; }
   .cta .left { position: static; width: auto; margin-bottom: 20px; }
   .cta .left h3 { font-size: clamp(26px, 7vw, 40px); line-height: 1.15; }
   .cta .card { position: static; width: auto; padding: 24px 20px; }
   .cta .card .phone { font-size: clamp(20px, 5.6vw, 30px); }
 
   /* --- прелоадер на узких экранах --- */
-  #preloader .pre-strip { width: 78vw; height: 36.43vw; }
-  #preloader .pre-logo { top: max(28px, calc(25% - 9.1vw)); }
-  #preloader .pre-pct { top: calc(75% + 9.1vw); line-height: 1; }
+  #preloader .pre-strip { width: 103vw; height: 60svh; }
+  #preloader .pre-media img { object-position: 62% 50%; }
+  #preloader .pre-logo { top: 10svh; }
+  #preloader .pre-pct { top: 90svh; line-height: 1; }
 }
 
 /* --- планшет: сетки пошире --- */

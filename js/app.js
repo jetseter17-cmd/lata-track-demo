@@ -47,6 +47,19 @@
     document.querySelectorAll('.rv').forEach((el) => io.observe(el));
   };
 
+  /* ---- бургер-меню (мобила): шторка справа + затемнение, бургер -> крестик ---- */
+  const setupBurger = () => {
+    const burger = document.querySelector('.burger');
+    if (!burger) return;
+    const dim = document.createElement('div');
+    dim.className = 'nav-dim';
+    document.body.appendChild(dim);
+    const close = () => html.classList.remove('nav-open');
+    burger.addEventListener('click', () => html.classList.toggle('nav-open'));
+    dim.addEventListener('click', close);
+    document.querySelectorAll('.site-header nav a').forEach((a) => a.addEventListener('click', close));
+  };
+
   /* ---- переходы между страницами ---- */
   const wipe = document.getElementById('wipe');
   const setupTransitions = () => {
@@ -182,6 +195,7 @@
 
   /* ---- старт ---- */
   const boot = () => {
+    setupBurger();
     setupTransitions();
     setupReveals();
     if (isStatic) return;
