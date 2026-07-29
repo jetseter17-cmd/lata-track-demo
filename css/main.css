@@ -68,7 +68,7 @@ html.preloading body { overflow: hidden; }
 .site-header .logo img { width: 100%; height: 100%; object-fit: cover; }
 .site-header nav {
   display: flex; gap: 20px; flex: none;
-  font-family: var(--f-mono); font-size: 13px; letter-spacing: 0.52px;
+  font-family: var(--f-head); font-weight: 500; font-size: 14px; letter-spacing: 0.56px;
   color: var(--ink); white-space: nowrap;
 }
 .site-header nav a { position: relative; transition: color 140ms var(--ease-out); }
@@ -79,7 +79,7 @@ html.preloading body { overflow: hidden; }
 }
 .site-header nav a:hover { color: var(--orange); }
 .site-header nav a:hover::after { transform: scaleX(1); }
-.site-header .phone { font-family: var(--f-mono); font-size: 13px; letter-spacing: 0.13px; white-space: nowrap; margin-left: auto; }
+.site-header .phone { font-family: var(--f-head); font-weight: 500; font-size: 14px; letter-spacing: 0.3px; white-space: nowrap; margin-left: auto; }
 
 /* ============== ОБЩИЕ ЭЛЕМЕНТЫ ============== */
 .h2 { font-family: var(--f-head); font-weight: 700; font-size: 44px; line-height: normal; color: var(--ink); }
