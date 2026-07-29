@@ -428,7 +428,7 @@ html.preloading body { overflow: hidden; }
 }
 html.preloading #preloader { display: block; }
 #preloader .pre-logo {
-  position: absolute; left: 50%; top: max(44px, calc(25% - 183.5px));
+  position: absolute; left: 50%; top: max(40px, calc(25% - 121.2px));
   width: 165px; height: 36px; transform: translate(-50%, -50%);
   opacity: 0; filter: blur(6px);
   transition: opacity 640ms var(--ease-out), filter 640ms var(--ease-out), transform 640ms var(--ease-out);
@@ -436,8 +436,8 @@ html.preloading #preloader { display: block; }
 #preloader.logo-in .pre-logo { opacity: 1; filter: blur(0); }
 #preloader.exit .pre-logo { opacity: 0; filter: blur(4px); transform: translate(-50%, calc(-50% - 10px)); transition-duration: 380ms; }
 #preloader .pre-strip {
-  position: absolute; left: 50%; top: calc(50% - 20.65px);
-  width: 1482.86px; height: 692.54px;
+  position: absolute; left: 50%; top: 50%;
+  width: 1038px; height: 484.78px; /* 70% от 1482.86x692.54 — FLIP в hero выразительнее */
   transform: translate(-50%, -50%);
   will-change: transform;
 }
@@ -455,7 +455,7 @@ html.preloading #preloader { display: block; }
   transform: scaleX(0); transform-origin: left center; }
 #preloader .line-t { top: 0; } #preloader .line-b { bottom: 0; }
 #preloader .pre-pct {
-  position: absolute; left: 50%; top: calc(75% + 162.5px); transform: translate(-50%, -50%);
+  position: absolute; left: 50%; top: calc(75% + 121.2px); transform: translate(-50%, -50%);
   font-family: var(--f-mono); font-size: 22px; line-height: 76px; color: var(--ink); white-space: nowrap;
   opacity: 0; transition: opacity 500ms var(--ease-out), transform 380ms var(--ease-out);
 }
@@ -649,9 +649,9 @@ html.static .rv { opacity: 1; transform: none; transition: none; }
   .cta .card .phone { font-size: clamp(20px, 5.6vw, 30px); }
 
   /* --- прелоадер на узких экранах --- */
-  #preloader .pre-strip { width: 103vw; height: 48.1vw; }
-  #preloader .pre-logo { top: max(28px, calc(25% - 12vw - 18px)); }
-  #preloader .pre-pct { top: calc(75% + 12vw + 14px); line-height: 1; }
+  #preloader .pre-strip { width: 78vw; height: 36.43vw; }
+  #preloader .pre-logo { top: max(28px, calc(25% - 9.1vw)); }
+  #preloader .pre-pct { top: calc(75% + 9.1vw); line-height: 1; }
 }
 
 /* --- планшет: сетки пошире --- */
