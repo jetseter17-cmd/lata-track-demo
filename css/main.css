@@ -259,9 +259,6 @@ html.preloading body { overflow: hidden; }
 .fun-card.p4 .num { top: 270.8px; } .fun-card.p4 .ttl { top: 296.8px; } .fun-card.p4 .dsc { top: 338.9px; width: 540px; }
 .fun-card.p4 .more { top: 392.8px; }
 .fun-card.p3 .pic img { object-position: 50% 32%; }
-/* в экспортах вшиты краевые линии — прячем лёгким зумом */
-.fun-card.p4 .pic img { transform: scale(1.025); }
-.fun-card:hover .pic img { transform: scale(1.035); }
 
 /* дополнительные активности */
 .act-h2 { position: absolute; left: 120px; top: 3003.51px; width: 900px; }
@@ -311,12 +308,7 @@ html.preloading body { overflow: hidden; }
 .tub-stripe-top { left: -224.44px; top: 1183.94px; transform: rotate(-15deg) scaleX(1.4); }
 .tub-stripe-bottom { left: -224.44px; top: 2670.95px; transform: rotate(15deg) scaleY(-1) scaleX(1.4); }
 
-/* точный кроп из макета: h 106.39%, top -5.32%, w 104.16% */
-.page-tubing .hero-strip .media img {
-  position: absolute; left: 0; top: -5.32%;
-  width: 104.16%; height: 106.39%;
-  object-fit: fill; object-position: center;
-}
+.page-tubing .hero-strip .media img { object-position: center; }
 .tub-paint-h1 { left: 112.96px; top: 200px; width: 386.3px; height: 137.77px; z-index: 3; }
 .page-tubing .h1-hero { left: 120.96px; top: 190px; }
 .tub-note { position: absolute; left: 1115.23px; top: 840.21px; width: 236.02px; font-size: 20px; color: var(--ink); z-index: 2; }
@@ -568,10 +560,6 @@ html.static .rv { opacity: 1; transform: none; transition: none; }
   .page-home .hero-strip { height: calc(100svh - 56px); }
   .page-tubing .hero-strip { height: 58vw; max-height: 420px; }
   .page-home .hero-strip .media img { object-position: 62% 50%; }
-  .page-tubing .hero-strip .media img {
-    position: absolute; left: -2%; top: -2%; width: 104%; height: 104%;
-    object-fit: cover; object-position: 50% 50%;
-  }
   .hero-paint-h1, .tub-paint-h1 { display: none; }
   .hero-badge { position: absolute; left: 16px; top: 74px; margin: 0; z-index: 4; transform: scale(0.82); transform-origin: left top; }
   .h1-hero, .home .h1-hero { position: absolute; left: 16px; top: 126px; margin: 0; font-size: clamp(36px, 10.5vw, 46px); line-height: 1.24; }
