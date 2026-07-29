@@ -141,23 +141,30 @@
     };
 
     const flip = () => {
+      // поправка на зум-«резину»: BCR в визуальных px, стили — в layout px
+      const z = parseFloat(html.style.zoom || '1') || 1;
       const pb = strip.getBoundingClientRect();
       const hb = heroStrip.getBoundingClientRect();
-      const dx = (hb.left + hb.width / 2) - (pb.left + pb.width / 2);
-      const dy = (hb.top + hb.height / 2) - (pb.top + pb.height / 2);
-      const s = hb.width / pb.width;
+      const dx = ((hb.left + hb.width / 2) - (pb.left + pb.width / 2)) / z;
+      const dy = ((hb.top + hb.height / 2) - (pb.top + pb.height / 2)) / z;
+      const ease = 'cubic-bezier(0.72, 0, 0.16, 1)';
+      const dur = 950;
+      // маска раскрывается: окно вырастает до размеров hero
       const anim = strip.animate(
         [
-          { transform: 'translate(-50%, -50%)' },
-          { transform: `translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px)) scale(${s})` },
+          { width: `${pb.width / z}px`, height: `${pb.height / z}px`, transform: 'translate(-50%, -50%)' },
+          { width: `${hb.width / z}px`, height: `${hb.height / z}px`, transform: `translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px))` },
         ],
-        { duration: 950, easing: 'cubic-bezier(0.72, 0, 0.16, 1)', fill: 'forwards' }
+        { duration: dur, easing: ease, fill: 'forwards' }
       );
-      // остаток зума фото уходит вместе с переносом — кадр «встаёт на место» глубже
+      // кроп фото сходится к полному кадру hero + докручивается остаток зума
       const mediaImg = strip.querySelector('.pre-media img');
       if (mediaImg) mediaImg.animate(
-        [{ transform: 'scale(1.12)' }, { transform: 'scale(1)' }],
-        { duration: 950, easing: 'cubic-bezier(0.72, 0, 0.16, 1)', fill: 'forwards' }
+        [
+          { top: '-21.43%', height: '142.86%', transform: 'scale(1.12)' },
+          { top: '0%', height: '100%', transform: 'scale(1)' },
+        ],
+        { duration: dur, easing: ease, fill: 'forwards' }
       );
       anim.onfinish = () => {
         heroIn();
