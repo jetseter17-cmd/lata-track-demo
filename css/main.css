@@ -675,7 +675,8 @@ html.static .rv { opacity: 1; transform: none; transition: none; }
   .warn-badge { white-space: normal; }
   .tub-rules-h2 { position: static; margin: 64px 16px 20px; white-space: normal; }
   .rules-cols { position: static; width: auto; height: auto; margin: 0 16px; }
-  .rule-card { position: static; left: 0; width: auto; height: auto; margin-bottom: 18px; padding: 22px 18px; }
+  .rule-card, .rule-card.allow, .rule-card.deny { position: static; left: 0; width: auto; height: auto; margin-bottom: 18px; padding: 22px 18px; }
+  .bcard { max-width: 100%; } /* страховка от десктопных ширин */
   .important-card { position: static; width: auto; margin: 0 16px 14px; padding: 22px 18px; }
   .rules-link { position: static; width: auto; margin: 0 16px; }
   .tub-hours-h2 { position: static; width: auto; margin: 64px 16px 20px; }
