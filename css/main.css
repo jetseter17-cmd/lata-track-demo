@@ -299,17 +299,7 @@ html.preloading body { overflow: hidden; }
 .site-footer .col.legal { left: 517.6px; top: 148px; width: 420px; }
 .site-footer .copy { position: absolute; left: 1118px; top: 62px; width: 260px;
   font-family: var(--f-mono); font-size: 14px; letter-spacing: 0.28px; color: var(--beige); }
-.site-footer .madebox { position: absolute; left: 1118px; top: 163.4px; width: 145.91px; height: 54.57px;
-  background: #000; border: 1px solid #d9d9d9; }
-.site-footer .madeslab { position: absolute; left: 1255.12px; top: 163.4px; width: 26.12px; height: 54.57px; background: #d9d9d9; }
-.site-footer .www { position: absolute; width: 14.63px; height: 12.6px; transform: rotate(-90deg); }
-.site-footer .www img { width: 100%; height: 100%; }
-.site-footer .www.w1 { left: 1262.85px; top: 170.5px; }
-.site-footer .www.w2 { left: 1262.85px; top: 186.57px; }
-.site-footer .www.w3 { left: 1262.86px; top: 202.63px; }
-.site-footer .made { position: absolute; left: 1128.09px; top: 169.68px;
-  font-family: var(--f-mono); font-size: 14px; letter-spacing: 0.28px; color: var(--fog); white-space: nowrap; }
-.site-footer .made .csite { letter-spacing: 0.64px; }
+.site-footer .mylogo { position: absolute; left: 1118px; top: 163.4px; width: 163.23px; height: 54.57px; }
 .site-footer .fox { position: absolute; left: 1218.53px; top: 113.19px; width: 159.99px; height: 209.56px; }
 .site-footer .fox img { width: 100%; height: 100%; }
 
@@ -624,8 +614,7 @@ html.static .rv { opacity: 1; transform: none; transition: none; }
   .site-footer .contacts { position: static; width: auto; margin-bottom: 16px; }
   .site-footer .col.info, .site-footer .col.legal { position: static; width: auto; margin-bottom: 14px; }
   .site-footer .copy { position: static; width: auto; margin-bottom: 14px; }
-  .site-footer .madebox, .site-footer .madeslab, .site-footer .www { display: none; }
-  .site-footer .made { position: static; }
+  .site-footer .mylogo { position: static; width: 164px; height: auto; margin-top: 6px; }
   .site-footer .fox { left: auto; right: -28px; top: auto; bottom: -44px; opacity: 0.9; }
 
   /* --- тюбинг --- */
