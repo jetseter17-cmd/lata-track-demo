@@ -715,3 +715,13 @@ html.static .rv { opacity: 1; transform: none; transition: none; }
   .cta .left { margin-bottom: 24px; }
   .webcams .cams-row { display: flex; gap: 10px; }
 }
+
+/* ================= КАСТОМНЫЙ КУРСОР ================= */
+@media (hover: hover) and (pointer: fine) {
+  html, body, a, button,
+  .btn, .more, .fun-card, .act-card, .cam, .gal, .burger {
+    cursor: url('../assets/img/pointer-32.png') 4 2, auto;
+    cursor: -webkit-image-set(url('../assets/img/pointer-32.png') 1x, url('../assets/img/pointer-64.png') 2x) 4 2, auto;
+    cursor: image-set(url('../assets/img/pointer-32.png') 1x, url('../assets/img/pointer-64.png') 2x) 4 2, auto;
+  }
+}
