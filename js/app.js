@@ -47,6 +47,32 @@
     document.querySelectorAll('.rv').forEach((el) => io.observe(el));
   };
 
+  /* ---- живой статус «мы работаем» по московскому времени ---- */
+  const setupOpenChip = () => {
+    const chip = document.getElementById('openChip');
+    if (!chip) return;
+    const HOURS = { weekday: [10, 22], weekend: [9, 23] }; // режим работы комплекса
+    const update = () => {
+      const msk = new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Moscow' }));
+      const day = msk.getDay();
+      const isWknd = (d) => d === 0 || d === 6;
+      const [open, close] = isWknd(day) ? HOURS.weekend : HOURS.weekday;
+      const h = msk.getHours() + msk.getMinutes() / 60;
+      const txt = chip.querySelector('.txt');
+      if (h >= open && h < close) {
+        chip.classList.remove('closed');
+        txt.textContent = `ОТКРЫТО · до ${close}:00`;
+      } else {
+        const nextDay = h >= close ? (day + 1) % 7 : day;
+        const nextOpen = (isWknd(nextDay) ? HOURS.weekend : HOURS.weekday)[0];
+        chip.classList.add('closed');
+        txt.textContent = `ОТКРОЕМСЯ в ${nextOpen}:00`;
+      }
+    };
+    update();
+    setInterval(update, 60 * 1000);
+  };
+
   /* ---- бургер-меню (мобила): шторка справа + затемнение, бургер -> крестик ---- */
   const setupBurger = () => {
     const burger = document.querySelector('.burger');
@@ -195,6 +221,7 @@
 
   /* ---- старт ---- */
   const boot = () => {
+    setupOpenChip();
     setupBurger();
     setupTransitions();
     setupReveals();

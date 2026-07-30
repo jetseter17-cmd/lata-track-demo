@@ -151,6 +151,21 @@ html.preloading body { overflow: hidden; }
   position: absolute; left: 16.69px; top: 11.4px;
   font-family: var(--f-head); font-weight: 700; font-size: 17.38px; color: var(--navy); white-space: nowrap;
 }
+.open-chip {
+  position: absolute; left: 412px; top: 149px; z-index: 4;
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--open); color: var(--ink);
+  padding: 8px 14px; box-shadow: 4px 4px 0 var(--ink);
+  font-family: var(--f-head); font-weight: 700; font-size: 13px; letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+.open-chip .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--ink);
+  animation: chip-pulse 2s var(--ease-in-out) infinite; }
+.open-chip.closed { background: var(--warn); }
+@keyframes chip-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(0.55); opacity: 0.5; }
+}
 .hero-paint-h1 { left: 102.58px; top: 313px; width: 386.3px; height: 137.77px; z-index: 3; }
 .home .h1-hero { left: 120px; top: 207.79px; }
 .hero-btns { position: absolute; left: 120px; top: 612.38px; display: flex; gap: 16px; z-index: 4; }
@@ -469,6 +484,7 @@ html.preloading .site-header, html.entering .site-header { transform: translateY
 html.preloading .hero-strip { visibility: hidden; }
 html.entering.page-anim-hero .hero-strip .media { clip-path: inset(0 0 100% 0); }
 html.preloading .hero-badge, html.entering .hero-badge { clip-path: inset(0 100% 0 0); }
+html.preloading .open-chip, html.entering .open-chip { opacity: 0; transform: translateY(8px); }
 html.preloading .hero-paint-h1, html.entering .hero-paint-h1, html.entering .tub-paint-h1 { opacity: 0; }
 html.preloading .h1-hero .mask > span, html.entering .h1-hero .mask > span { transform: translateY(108%); }
 html.preloading .hero-btns .btn, html.entering .hero-btns .btn, html.entering .tub-hero-soft { opacity: 0; transform: translateY(18px); }
@@ -477,6 +493,7 @@ html.preloading .hero-btns .btn, html.entering .hero-btns .btn, html.entering .t
 html.hero-in .site-header { transform: translateY(0); transition: transform 560ms var(--ease-out) 260ms; }
 html.hero-in .hero-badge { clip-path: inset(0 -8% 0 0); transition: clip-path 520ms var(--ease-in-out) 60ms; }
 html.hero-in .hero-paint-h1, html.hero-in .tub-paint-h1 { opacity: 1; transition: opacity 420ms var(--ease-out) 330ms; }
+html.hero-in .open-chip { opacity: 1; transform: translateY(0); transition: opacity 420ms var(--ease-out) 380ms, transform 420ms var(--ease-out) 380ms; }
 html.hero-in .h1-hero .mask > span { transform: translateY(0); transition: transform 640ms var(--ease-out); }
 html.hero-in .h1-hero .mask:nth-child(1) > span { transition-delay: 120ms; }
 html.hero-in .h1-hero .mask:nth-child(2) > span { transition-delay: 200ms; }
@@ -562,6 +579,7 @@ html.static .rv { opacity: 1; transform: none; transition: none; }
   .page-home .hero-strip .media img { object-position: 62% 50%; }
   .hero-paint-h1, .tub-paint-h1 { display: none; }
   .hero-badge { position: absolute; left: 16px; top: 74px; margin: 0; z-index: 4; transform: scale(0.82); transform-origin: left top; }
+  .open-chip { left: auto; right: 14px; top: 78px; padding: 7px 11px; font-size: 12px; }
   .h1-hero, .home .h1-hero { position: absolute; left: 16px; top: 126px; margin: 0; font-size: clamp(36px, 10.5vw, 46px); line-height: 1.24; }
   .home .h1-hero .mask:nth-child(2) > span {
     display: inline-block; padding: 2px 16px 6px 10px; margin-left: -10px;
