@@ -144,15 +144,15 @@ html.preloading body { overflow: hidden; }
 .home-stripe-2 { left: -304.35px; top: 3008.36px; transform: rotate(15deg) scaleY(-1) scaleX(1.4); }
 
 /* hero */
-.hero-badge { position: absolute; left: 114px; top: 143px; width: 284.59px; height: 44.79px; z-index: 4; }
-.hero-badge .paint-img { position: absolute; left: 0; top: 0; width: 284.47px; height: 44px; transform: rotate(0.16deg); }
-.hero-badge .paint-img img { position: absolute; left: 0; top: 0; width: 102.81%; height: 118.18%; }
-.hero-badge .t {
-  position: absolute; left: 16.69px; top: 11.4px;
-  font-family: var(--f-head); font-weight: 700; font-size: 17.38px; color: var(--navy); white-space: nowrap;
+.hero-badge {
+  position: absolute; left: 120px; top: 137px; z-index: 4;
+  display: inline-block; background: #fff; color: var(--navy);
+  padding: 9px 12px; box-shadow: 4px 4px 0 var(--ink);
+  font-family: var(--f-head); font-weight: 700; font-size: 15px; line-height: 1.2;
+  white-space: nowrap;
 }
 .open-chip {
-  position: absolute; left: 32px; top: 94px; z-index: 4;
+  position: absolute; left: 120px; top: 94px; z-index: 4;
   display: inline-flex; align-items: center; gap: 9px;
   background: var(--open); color: var(--ink);
   padding: 8px 14px; box-shadow: 4px 4px 0 var(--ink);
@@ -491,7 +491,7 @@ html.preloading .hero-btns .btn, html.entering .hero-btns .btn, html.entering .t
 
 /* конечные состояния + тайминги */
 html.hero-in .site-header { transform: translateY(0); transition: transform 560ms var(--ease-out) 260ms; }
-html.hero-in .hero-badge { clip-path: inset(0 -8% 0 0); transition: clip-path 520ms var(--ease-in-out) 60ms; }
+html.hero-in .hero-badge { clip-path: inset(0 -10px -10px 0); transition: clip-path 520ms var(--ease-in-out) 60ms; }
 html.hero-in .hero-paint-h1, html.hero-in .tub-paint-h1 { opacity: 1; transition: opacity 420ms var(--ease-out) 330ms; }
 html.hero-in .open-chip { opacity: 1; transform: translateY(0); transition: opacity 420ms var(--ease-out) 380ms, transform 420ms var(--ease-out) 380ms; }
 html.hero-in .h1-hero .mask > span { transform: translateY(0); transition: transform 640ms var(--ease-out); }
@@ -579,8 +579,9 @@ html.static .rv { opacity: 1; transform: none; transition: none; }
   .page-home .hero-strip .media img { object-position: 62% 50%; }
   .hero-paint-h1, .tub-paint-h1 { display: none; }
   .open-chip { left: 16px; top: 70px; padding: 7px 12px; font-size: 12px; }
-  .hero-badge { position: absolute; left: 16px; top: 118px; margin: 0; z-index: 4; transform: scale(0.82); transform-origin: left top; }
-  .h1-hero, .home .h1-hero { position: absolute; left: 16px; top: 164px; margin: 0; font-size: clamp(36px, 10.5vw, 46px); line-height: 1.24; }
+  .hero-badge { position: absolute; left: 16px; top: 110px; margin: 0; z-index: 4;
+    transform: none; font-size: 11px; padding: 7px 10px; box-shadow: 3px 3px 0 var(--ink); }
+  .h1-hero, .home .h1-hero { position: absolute; left: 16px; top: 158px; margin: 0; font-size: clamp(36px, 10.5vw, 46px); line-height: 1.24; }
   .home .h1-hero .mask:nth-child(2) > span {
     display: inline-block; padding: 2px 16px 6px 10px; margin-left: -10px;
     background: url('../assets/img/paint-h1.svg') 50% 50% / 100% 100% no-repeat;
