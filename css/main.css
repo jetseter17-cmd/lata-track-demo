@@ -144,13 +144,15 @@ html.preloading body { overflow: hidden; }
 .home-stripe-2 { left: -304.35px; top: 3008.36px; transform: rotate(15deg) scaleY(-1) scaleX(1.4); }
 
 /* hero */
-.hero-kicker {
-  position: absolute; left: 26px; top: 158px; z-index: 4;
-  font-family: var(--f-head); font-weight: 700; font-size: 22px; letter-spacing: 0.5px;
-  color: var(--navy); white-space: nowrap;
+.hero-badge { position: absolute; left: 114px; top: 143px; width: 284.59px; height: 44.79px; z-index: 4; }
+.hero-badge .paint-img { position: absolute; left: 0; top: 0; width: 284.47px; height: 44px; transform: rotate(0.16deg); }
+.hero-badge .paint-img img { position: absolute; left: 0; top: 0; width: 102.81%; height: 118.18%; }
+.hero-badge .t {
+  position: absolute; left: 16.69px; top: 11.4px;
+  font-family: var(--f-head); font-weight: 700; font-size: 17.38px; color: var(--navy); white-space: nowrap;
 }
 .open-chip {
-  position: absolute; left: 32px; top: 94px; z-index: 4;
+  position: absolute; left: 412px; top: 149px; z-index: 4;
   display: inline-flex; align-items: center; gap: 9px;
   background: var(--open); color: var(--ink);
   padding: 8px 14px; box-shadow: 4px 4px 0 var(--ink);
@@ -164,12 +166,12 @@ html.preloading body { overflow: hidden; }
   0%, 100% { transform: scale(1); opacity: 1; }
   50% { transform: scale(0.55); opacity: 0.5; }
 }
-.hero-paint-h1 { left: -50px; top: 322px; width: 700px; height: 168px; z-index: 3; }
-.home .h1-hero { left: 22px; top: 196px; font-size: 118px; line-height: 133px; }
-.hero-btns { position: absolute; left: 0; top: 616px; display: flex; gap: 26px; z-index: 4; }
-.hero-btns .btn { width: 420px; height: 64px; }
-.hero-btns .btn-ghost { background: #fff; }
-.hero-btns .btn-dark, .hero-btns .btn-ghost { font-family: var(--f-head); font-weight: 600; font-size: 17px; letter-spacing: 0.6px; }
+.hero-paint-h1 { left: 102.58px; top: 313px; width: 386.3px; height: 137.77px; z-index: 3; }
+.home .h1-hero { left: 120px; top: 207.79px; }
+.hero-btns { position: absolute; left: 120px; top: 612.38px; display: flex; gap: 16px; z-index: 4; }
+.hero-btns .btn { width: 240px; height: 56px; }
+.hero-btns .btn-dark { font-family: var(--f-body); font-weight: 500; font-size: 14px; letter-spacing: 0.7px; }
+.hero-btns .btn-ghost { font-family: var(--f-body); font-weight: 500; font-size: 13px; letter-spacing: 0.39px; }
 
 /* веб-камеры */
 .webcams {
@@ -481,7 +483,7 @@ html.preloading #preloader { display: block; }
 html.preloading .site-header, html.entering .site-header { transform: translateY(-74px); }
 html.preloading .hero-strip { visibility: hidden; }
 html.entering.page-anim-hero .hero-strip .media { clip-path: inset(0 0 100% 0); }
-html.preloading .hero-kicker, html.entering .hero-kicker { opacity: 0; transform: translateY(10px); }
+html.preloading .hero-badge, html.entering .hero-badge { clip-path: inset(0 100% 0 0); }
 html.preloading .open-chip, html.entering .open-chip { opacity: 0; transform: translateY(8px); }
 html.preloading .hero-paint-h1, html.entering .hero-paint-h1, html.entering .tub-paint-h1 { opacity: 0; }
 html.preloading .h1-hero .mask > span, html.entering .h1-hero .mask > span { transform: translateY(108%); }
@@ -489,7 +491,7 @@ html.preloading .hero-btns .btn, html.entering .hero-btns .btn, html.entering .t
 
 /* конечные состояния + тайминги */
 html.hero-in .site-header { transform: translateY(0); transition: transform 560ms var(--ease-out) 260ms; }
-html.hero-in .hero-kicker { opacity: 1; transform: translateY(0); transition: opacity 460ms var(--ease-out) 80ms, transform 460ms var(--ease-out) 80ms; }
+html.hero-in .hero-badge { clip-path: inset(0 -8% 0 0); transition: clip-path 520ms var(--ease-in-out) 60ms; }
 html.hero-in .hero-paint-h1, html.hero-in .tub-paint-h1 { opacity: 1; transition: opacity 420ms var(--ease-out) 330ms; }
 html.hero-in .open-chip { opacity: 1; transform: translateY(0); transition: opacity 420ms var(--ease-out) 380ms, transform 420ms var(--ease-out) 380ms; }
 html.hero-in .h1-hero .mask > span { transform: translateY(0); transition: transform 640ms var(--ease-out); }
@@ -576,9 +578,9 @@ html.static .rv { opacity: 1; transform: none; transition: none; }
   .page-tubing .hero-strip { height: 58vw; max-height: 420px; }
   .page-home .hero-strip .media img { object-position: 62% 50%; }
   .hero-paint-h1, .tub-paint-h1 { display: none; }
-  .open-chip { left: 16px; top: 72px; padding: 7px 12px; font-size: 12px; }
-  .hero-kicker { position: absolute; left: 16px; top: 122px; font-size: 14px; letter-spacing: 0.4px; white-space: normal; }
-  .h1-hero, .home .h1-hero { position: absolute; left: 16px; top: 152px; margin: 0; font-size: clamp(38px, 11vw, 48px); line-height: 1.22; }
+  .hero-badge { position: absolute; left: 16px; top: 74px; margin: 0; z-index: 4; transform: scale(0.82); transform-origin: left top; }
+  .open-chip { left: auto; right: 14px; top: 78px; padding: 7px 11px; font-size: 12px; }
+  .h1-hero, .home .h1-hero { position: absolute; left: 16px; top: 126px; margin: 0; font-size: clamp(36px, 10.5vw, 46px); line-height: 1.24; }
   .home .h1-hero .mask:nth-child(2) > span {
     display: inline-block; padding: 2px 16px 6px 10px; margin-left: -10px;
     background: url('../assets/img/paint-h1.svg') 50% 50% / 100% 100% no-repeat;
