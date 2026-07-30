@@ -152,7 +152,7 @@ html.preloading body { overflow: hidden; }
   font-family: var(--f-head); font-weight: 700; font-size: 17.38px; color: var(--navy); white-space: nowrap;
 }
 .open-chip {
-  position: absolute; left: 412px; top: 149px; z-index: 4;
+  position: absolute; left: 32px; top: 94px; z-index: 4;
   display: inline-flex; align-items: center; gap: 9px;
   background: var(--open); color: var(--ink);
   padding: 8px 14px; box-shadow: 4px 4px 0 var(--ink);
@@ -578,9 +578,9 @@ html.static .rv { opacity: 1; transform: none; transition: none; }
   .page-tubing .hero-strip { height: 58vw; max-height: 420px; }
   .page-home .hero-strip .media img { object-position: 62% 50%; }
   .hero-paint-h1, .tub-paint-h1 { display: none; }
-  .hero-badge { position: absolute; left: 16px; top: 74px; margin: 0; z-index: 4; transform: scale(0.82); transform-origin: left top; }
-  .open-chip { left: auto; right: 14px; top: 78px; padding: 7px 11px; font-size: 12px; }
-  .h1-hero, .home .h1-hero { position: absolute; left: 16px; top: 126px; margin: 0; font-size: clamp(36px, 10.5vw, 46px); line-height: 1.24; }
+  .open-chip { left: 16px; top: 70px; padding: 7px 12px; font-size: 12px; }
+  .hero-badge { position: absolute; left: 16px; top: 118px; margin: 0; z-index: 4; transform: scale(0.82); transform-origin: left top; }
+  .h1-hero, .home .h1-hero { position: absolute; left: 16px; top: 164px; margin: 0; font-size: clamp(36px, 10.5vw, 46px); line-height: 1.24; }
   .home .h1-hero .mask:nth-child(2) > span {
     display: inline-block; padding: 2px 16px 6px 10px; margin-left: -10px;
     background: url('../assets/img/paint-h1.svg') 50% 50% / 100% 100% no-repeat;
